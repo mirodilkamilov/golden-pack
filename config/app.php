@@ -179,6 +179,7 @@ return [
       /*
        * Package Service Providers...
        */
+      Watson\Active\ActiveServiceProvider::class,
 
       /*
        * Application Service Providers...
@@ -189,6 +190,7 @@ return [
       App\Providers\EventServiceProvider::class,
       App\Providers\RouteServiceProvider::class,
 
+      App\Providers\ViewServiceProvider::class,
    ],
 
    /*
