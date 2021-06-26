@@ -68,11 +68,11 @@
                <li class="dropdown dropdown-user nav-item">
                   <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
                      <div class="user-nav d-sm-flex d-none">
-                        <span class="user-name text-bold-600">{{ 'Change' }}</span>
+                        <span class="user-name text-bold-600">{{ $user->name }}</span>
                         <span class="user-status">{{ __('Admin') }}</span>
                      </div>
                      <div class="avatar">
-                        <span class="avatar-content">{{ Str::substr('Change', 0, 1) }}</span>
+                        <span class="avatar-content">{{ Str::substr($user->name, 0, 1) }}</span>
                      </div>
                   </a>
                   <div class="dropdown-menu dropdown-menu-right">
@@ -134,47 +134,27 @@
 
          <li class="nav-item ">
             <a href="">
-               <i class="feather icon-monitor"></i>
-               <span class="menu-title">{{ __('Slides') }}</span>
-            </a>
-         </li>
-         <li class="nav-item ">
-            <a href="">
                <i class="feather icon-list"></i>
-               <span class="menu-title">{{ __('Categories') }}</span>
+               <span class="menu-title">{{ __('Orders') }}</span>
             </a>
          </li>
-         <li class="nav-item ">
-            <a href="">
-               <i class="feather icon-briefcase"></i>
-               <span class="menu-title">{{ __('Projects') }}</span>
-            </a>
-         </li>
-         <li class="nav-item ">
-            <a href="">
-               <i class="feather icon-message-square"></i>
-               <span class="menu-title">{{ __('Messages') }}</span>
-               {{--               @if($numNewMessages > 0)--}}
-               {{--               <span class="badge badge badge-info badge-pill float-right">{{ $numNewMessages }}</span>--}}
-               {{--               @endif--}}
-            </a>
-         </li>
+
          <li class="nav-item @if('about') sidebar-group-active open @endif">
             <a href="#">
                <i class="feather icon-info"></i>
-               <span class="menu-title">{{ __('About us') }}</span>
+               <span class="menu-title">{{ __('About company') }}</span>
             </a>
             <ul class="menu-content">
                <li class="">
                   <a href="">
                      <i></i>
-                     <span class="menu-item">{{ __('Main information') }}</span>
+                     <span class="menu-item">{{ __('Hero section') }}</span>
                   </a>
                </li>
                <li class="">
                   <a href="">
                      <i></i>
-                     <span class="menu-item">{{ __('Customers') }}</span>
+                     <span class="menu-item">{{ __('Main information') }}</span>
                   </a>
                </li>
                <li class="">
@@ -185,10 +165,41 @@
                </li>
             </ul>
          </li>
+
          <li class="nav-item ">
             <a href="">
-               <i class="feather icon-trash-2"></i>
-               <span class="menu-title">{{ __('Deleted elements') }}</span>
+               <i class="feather icon-package"></i>
+               <span class="menu-title">{{ __('Packaging process') }}</span>
+            </a>
+         </li>
+         <li class="nav-item ">
+            <a href="">
+               <i class="feather"><img src="/assets/uploads/other/tool.svg"></i>
+               <span class="menu-title">{{ __('Equipments') }}</span>
+            </a>
+         </li>
+         <li class="nav-item ">
+            <a href="">
+               <i class="feather icon-briefcase"></i>
+               <span class="menu-title">{{ __('Portfolios') }}</span>
+            </a>
+         </li>
+         <li class="nav-item ">
+            <a href="">
+               <i class="fa fa-quote-left"></i>
+               <span class="menu-title">{{ __('Testimonials') }}</span>
+            </a>
+         </li>
+         <li class="nav-item ">
+            <a href="">
+               <i class="feather icon-thumbs-up"></i>
+               <span class="menu-title">{{ __('Advantages') }}</span>
+            </a>
+         </li>
+         <li class="nav-item ">
+            <a href="">
+               <i class="fa fa-handshake-o"></i>
+               <span class="menu-title">{{ __('Cooperation') }}</span>
             </a>
          </li>
       </ul>
