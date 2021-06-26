@@ -18,7 +18,7 @@
                      <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="account-vertical-general"
                              aria-labelledby="account-pill-general" aria-expanded="true">
-                           <form action="" method="post">
+                           <form action="{{ route('users.update', $user->id) }}" method="post">
                               @csrf
                               @method('PUT')
                               <div class="row">
