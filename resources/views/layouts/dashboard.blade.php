@@ -139,27 +139,25 @@
             </a>
          </li>
 
-         <li class="nav-item @if('about') sidebar-group-active open @endif">
+         <li
+            class="nav-item  {{ active(['hero-section.*', 'main-info.*', 'contacts.*'], 'sidebar-group-active open') }}">
             <a href="#">
                <i class="feather icon-info"></i>
                <span class="menu-title">{{ __('About company') }}</span>
             </a>
             <ul class="menu-content">
-               <li class="">
-                  <a href="">
-                     <i></i>
+               <li class="{{ active('hero-section.*') }}">
+                  <a href="{{ route('hero-section.index') }}">
                      <span class="menu-item">{{ __('Hero section') }}</span>
                   </a>
                </li>
                <li class="">
                   <a href="">
-                     <i></i>
                      <span class="menu-item">{{ __('Main information') }}</span>
                   </a>
                </li>
                <li class="">
                   <a href="">
-                     <i></i>
                      <span class="menu-item">{{ __('Contacts') }}</span>
                   </a>
                </li>
@@ -241,8 +239,12 @@
 <script src="/app-assets/js/scripts/modal/components-modal.js"></script>
 
 <script src="/app-assets/vendors/js/ui/jquery.sticky.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
 
 @stack('data-table')
+@stack('image-preview')
+@stack('change-language-tabs')
+@stack('ckeditor')
 <!-- END: Page JS-->
 
 </body>

@@ -105,3 +105,18 @@
     display: flex;
     justify-content: flex-end;
 }
+
+
+table.table-bordered th,
+table.table-bordered td {
+    border: 1px solid #dedede;
+}
+
+table.dataTable {
+    border-right: 1px solid #dedede;
+    border-left: 1px solid #dedede;
+}
+
+.ck-editor__editable_inline {
+    min-height: 150px;
+}

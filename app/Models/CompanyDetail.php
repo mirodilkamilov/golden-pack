@@ -21,5 +21,9 @@ class CompanyDetail extends Model
         'social_media' => 'array'
     ];
 
+    public function getImageAttribute($value)
+    {
+        return '/assets/uploads/' . $value;
+    }
 
 }

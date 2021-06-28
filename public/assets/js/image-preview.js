@@ -6,7 +6,7 @@ placeholder.css('display', 'block');
 function readURL(input, preview = null, width = '300px') {
     if (preview === null)
         preview = $(input).closest('.card-body').find('.preview');
-        placeholder = $(input).closest('.card-body').find('.placeholder');
+    placeholder = $(input).closest('.card-body').find('.placeholder');
 
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -16,7 +16,7 @@ function readURL(input, preview = null, width = '300px') {
             preview.css('width', width);
             placeholder.css('display', 'none');
             preview.css('display', 'block');
-        }
+        };
 
         reader.readAsDataURL(input.files[0]); // convert to base64 string
     }
@@ -33,7 +33,7 @@ function imagesPreview(input, placeToInsertImagePreview) {
             var reader = new FileReader();
             reader.onload = function (event) {
                 $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
-            }
+            };
             reader.readAsDataURL(input.files[i]);
         }
     }
