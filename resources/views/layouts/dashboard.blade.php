@@ -68,11 +68,11 @@
                <li class="dropdown dropdown-user nav-item">
                   <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
                      <div class="user-nav d-sm-flex d-none">
-                        <span class="user-name text-bold-600">{{ $user->name }}</span>
+                        <span class="user-name text-bold-600">{{ $name }}</span>
                         <span class="user-status">{{ __('Admin') }}</span>
                      </div>
                      <div class="avatar">
-                        <span class="avatar-content">{{ Str::substr($user->name, 0, 1) }}</span>
+                        <span class="avatar-content">{{ Str::substr($name, 0, 1) }}</span>
                      </div>
                   </a>
                   <div class="dropdown-menu dropdown-menu-right">
@@ -132,10 +132,10 @@
             </a>
          </li>
 
-         <li class="nav-item ">
-            <a href="">
+         <li class="nav-item {{ active('applications.index') }}">
+            <a href="{{ route('applications.index') }}">
                <i class="feather icon-list"></i>
-               <span class="menu-title">{{ __('Orders') }}</span>
+               <span class="menu-title">{{ __('Applications') }}</span>
             </a>
          </li>
 
@@ -221,6 +221,8 @@
 
 <script src="/app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
 <script src="/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js"></script>
+<script src="/app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
+<script src="/app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
 <script src="/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js"></script>
 <script src="/app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js"></script>
 <!-- END: Page Vendor JS-->
@@ -240,6 +242,7 @@
 
 <script src="/app-assets/vendors/js/ui/jquery.sticky.js"></script>
 
+@stack('data-table')
 <!-- END: Page JS-->
 
 </body>

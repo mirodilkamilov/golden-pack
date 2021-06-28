@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,16 +17,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-   return view('welcome');
+    return view('welcome');
 })->name('home.index');
 
 Route::group([
-   'prefix' => 'dashboard',
-   'middleware' => ['auth', 'dashboard.setLocale'],
+    'prefix' => 'dashboard',
+    'middleware' => ['auth', 'dashboard.setLocale'],
 ], function () {
-   Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 
-   Route::resource('users', UsersController::class)->only('update');
+    Route::resource('users', UsersController::class)->only('update');
+
+    Route::resource('applications', ApplicationController::class)->only('index', 'create', 'destroy');
 });
 
 require __DIR__ . '/auth.php';
