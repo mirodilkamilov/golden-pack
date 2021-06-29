@@ -23,7 +23,12 @@ class CompanyDetail extends Model
 
     public function getImageAttribute($value)
     {
-        return '/assets/uploads/' . $value;
+        return isset($value) ? '/assets/uploads/' . $value : $value;
+    }
+
+    public function getAboutImageAttribute($value)
+    {
+        return isset($value) ? '/assets/uploads/' . $value : $value;
     }
 
 }

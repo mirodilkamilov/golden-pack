@@ -3,6 +3,7 @@
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HeroSectionController;
+use App\Http\Controllers\MainInformationController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,9 @@ Route::group([
 
     Route::resource('hero-section', HeroSectionController::class)->only('index', 'store', 'update')
         ->parameters(['hero-section' => 'companyDetail']);
+
+    Route::resource('main-information', MainInformationController::class)->only('index', 'store', 'update')
+        ->parameters(['main-information' => 'companyDetail']);
 });
 
 require __DIR__ . '/auth.php';

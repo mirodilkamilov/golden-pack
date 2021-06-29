@@ -151,8 +151,8 @@
                      <span class="menu-item">{{ __('Hero section') }}</span>
                   </a>
                </li>
-               <li class="">
-                  <a href="">
+               <li class="{{ active('main-information.*') }}">
+                  <a href="{{ route('main-information.index') }}">
                      <span class="menu-item">{{ __('Main information') }}</span>
                   </a>
                </li>
