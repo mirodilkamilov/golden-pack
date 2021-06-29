@@ -17,7 +17,8 @@
                   <div class="col-12">
                      <div class="card">
                         <div class="card-header justify-content-center">
-                           <h4 class="card-title">{{ isset($about) ? __('Edit') : __('Create') }} {{ __('Hero section') }}</h4>
+                           <h4
+                              class="card-title">{{ isset($about) ? __('Edit') : __('Create') }} {{ __('Hero section') }}</h4>
                         </div>
                         <div class="card-content">
                            <div class="card-body pb-0">
@@ -29,12 +30,12 @@
                                     @php $inputs = [
                                      'title',
                                      'description',
-                                  ];
+                                    ];
                                     @endphp
                                     <x-dashboard.language-tabs :availableLangs="$availableLangs"
                                                                :inputs="$inputs"/>
 
-                                    <x-dashboard.main-form-template :availableLangs="$availableLangs"/>
+                                    <x-dashboard.about.hero-section.form :availableLangs="$availableLangs"/>
                                  </form>
                               @endunless
 
@@ -51,8 +52,8 @@
                                     @endphp
                                     <x-dashboard.language-tabs :availableLangs="$availableLangs" :inputs="$inputs"/>
 
-                                    <x-dashboard.main-form-template :availableLangs="$availableLangs"
-                                                                    :content="$about"/>
+                                    <x-dashboard.about.hero-section.form :availableLangs="$availableLangs"
+                                                                         :content="$about"/>
                                  </form>
                               @endif
                            </div>

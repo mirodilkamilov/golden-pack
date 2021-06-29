@@ -20,7 +20,7 @@ class StoreHeroSectionJob
         $this->request = $request;
     }
 
-    public function handle()
+    public function handle(): void
     {
         if ($this->request->hasFile('image'))
             $this->validated['image'] = $this->request->file('image')->store('hero-section');

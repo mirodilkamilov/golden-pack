@@ -15,9 +15,9 @@ class UpdateHeroSectionRequest extends FormRequest
             'title.uz' => 'required|min:3|max:255',
 
             'description' => 'required|array|max:3',
-            'description.ru' => 'required|min:3|max:1024',
-            'description.en' => 'required|min:3|max:1024',
-            'description.uz' => 'required|min:3|max:1024',
+            'description.ru' => 'required|min:10|max:1024',
+            'description.en' => 'required|min:10|max:1024',
+            'description.uz' => 'required|min:10|max:1024',
 
             'image' => 'nullable|image|max:4096'
         ];

@@ -9,7 +9,7 @@
             <div class="col-md-12 col-12">
                <div class="form-label-group">
                   <input name="title[{{ $lang }}]"
-                         value="{{ old("title.$lang") ?? $content?->title[$lang] }}"
+                         value="{{ old("title.$lang") ?? $content?->title[$lang] ?? '' }}"
                          type="text"
                          id="title-{{$loop->iteration}}"
                          class="form-control @error("title.$lang") is-invalid @enderror"
@@ -27,7 +27,7 @@
                             class="form-control @error("description.$lang") is-invalid @enderror"
                             id="description-{{ $lang }}"
                             placeholder="{{ __('Description') }} ({{ $lang }})"
-                            spellcheck="false">{{ old("description.$lang") ?? $content?->description[$lang] }}</textarea>
+                            spellcheck="false">{{ old("description.$lang") ?? $content?->description[$lang] ?? '' }}</textarea>
                   <label for="description-{{ $lang }}">{{ __('Description') }}
                      ({{ $lang }})</label>
                   @error("description.$lang")
