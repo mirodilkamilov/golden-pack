@@ -156,8 +156,8 @@
                      <span class="menu-item">{{ __('Main information') }}</span>
                   </a>
                </li>
-               <li class="">
-                  <a href="">
+               <li class="{{ active('contacts.*') }}">
+                  <a href="{{ route('contacts.index') }}">
                      <span class="menu-item">{{ __('Contacts') }}</span>
                   </a>
                </li>
@@ -241,10 +241,12 @@
 <script src="/app-assets/vendors/js/ui/jquery.sticky.js"></script>
 <script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
 
+@stack('modal-show')
 @stack('data-table')
 @stack('image-preview')
 @stack('change-language-tabs')
 @stack('ckeditor')
+@stack('company-contacts-list-manipulation')
 <!-- END: Page JS-->
 
 </body>

@@ -15,9 +15,9 @@ class UpdateMainInformationRequest extends FormRequest
             'about_title.uz' => 'required|min:3|max:255',
 
             'about_description' => 'required|array|max:3',
-            'about_description.ru' => 'required|min:3|max:1024',
-            'about_description.en' => 'required|min:3|max:1024',
-            'about_description.uz' => 'required|min:3|max:1024',
+            'about_description.ru' => 'required|min:10|max:1024',
+            'about_description.en' => 'required|min:10|max:1024',
+            'about_description.uz' => 'required|min:10|max:1024',
 
             'about_image' => 'nullable|image|max:4096'
         ];

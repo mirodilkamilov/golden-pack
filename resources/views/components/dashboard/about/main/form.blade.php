@@ -63,7 +63,7 @@
       </fieldset>
    </div>
 </div>
-<div class="col-12 mt-1 pl-0" style="display: flex; justify-content: flex-end;">
+<div class="col-12 mt-1 p-0" style="display: flex; justify-content: flex-end;">
    <button type="submit" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">
       {{ __('Save') }}
    </button>
