@@ -19,6 +19,7 @@ class CreateCompanyDetailsTable extends Migration
             $table->string('address')->nullable();
             $table->jsonb('phone')->nullable();
             $table->jsonb('email')->nullable();
+            $table->text('google_map')->nullable();
             $table->jsonb('social_media')->nullable();
         });
     }
