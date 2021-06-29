@@ -10,9 +10,9 @@ class CreateCompanyDetailsTable extends Migration
     {
         Schema::create('company_details', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->jsonb('title');
-            $table->jsonb('description');
-            $table->string('image');
+            $table->jsonb('title')->nullable();
+            $table->jsonb('description')->nullable();
+            $table->string('image')->nullable();
             $table->jsonb('about_title')->nullable();
             $table->jsonb('about_description')->nullable();
             $table->string('about_image')->nullable();

@@ -14,6 +14,6 @@ class CompanyDetailSeeder extends Seeder
      */
     public function run(): void
     {
-        CompanyDetail::factory()->create();
+//        CompanyDetail::factory()->create();
     }
 }
