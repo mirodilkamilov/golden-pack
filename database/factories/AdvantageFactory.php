@@ -24,7 +24,7 @@ class AdvantageFactory extends Factory
         return [
             'title' => ['ru' => 'ru-' . $this->faker->word, 'en' => 'en-' . $this->faker->word, 'uz' => 'uz-' . $this->faker->word],
             'description' => ['ru' => 'ru-' . $this->faker->sentence, 'en' => 'en-' . $this->faker->sentence, 'uz' => 'uz-' . $this->faker->sentence],
-            'image' => $this->faker->imageUrl(),
+            'image' => 'other/test-content' . $this->faker->numberBetween(1, 5) . '.png',
             'position' => $this->faker->numberBetween(1, 10)
         ];
     }

@@ -36,7 +36,7 @@ class CooperationFactory extends Factory
                     'description' => 'uz-' . $this->faker->sentence
                 ],
             ],
-            'image' => $this->faker->imageUrl()
+            'image' => 'other/test-content' . $this->faker->numberBetween(1, 5) . '.png',
         ];
     }
 }
