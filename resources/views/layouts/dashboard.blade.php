@@ -170,8 +170,8 @@
                <span class="menu-title">{{ __('Packaging process') }}</span>
             </a>
          </li>
-         <li class="nav-item ">
-            <a href="">
+         <li class="nav-item {{ active('equipment.*') }}">
+            <a href="{{ route('equipment.index') }}">
                <i class="feather"><img src="/assets/uploads/other/tool.svg"></i>
                <span class="menu-title">{{ __('Equipments') }}</span>
             </a>

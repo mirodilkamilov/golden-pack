@@ -20,15 +20,15 @@
                      <div class="card">
                         <div class="card-header justify-content-center">
                            <h4 class="card-title">
-                              {{ isset($process) ? __('Edit') : __('Create') }} {{ __('Packaging process') }}
+                              {{ isset($content) ? __('Edit') : __('Create') }} {{ __(Str::title($currentRoute)) }}
                            </h4>
                         </div>
                         <div class="card-content">
                            <div class="card-body pb-0">
                               <form class="form" method="post" enctype="multipart/form-data"
-                                    action="{{ isset($process) ? route('processes.update', $process->id) : route('processes.store') }}">
+                                    action="{{ isset($content) ? route($currentRoute.'.update', $content->id) : route($currentRoute.'.store') }}">
                                  @csrf
-                                 @if(isset($process))
+                                 @if(isset($content))
                                     @method('PUT')
                                  @endif
 
@@ -39,9 +39,9 @@
                                  @endphp
                                  <x-dashboard.language-tabs :availableLangs="$availableLangs"
                                                             :inputs="$inputs"/>
-                                 @php $process = $process ?? null; @endphp
+                                 @php $content = $content ?? null; @endphp
                                  <x-dashboard.template-form :availableLangs="$availableLangs" :positions="$positions"
-                                                            :content="$process"/>
+                                                            :content="$content"/>
                               </form>
                            </div>
                         </div>

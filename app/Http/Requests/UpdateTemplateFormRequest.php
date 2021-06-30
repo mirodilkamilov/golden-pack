@@ -8,6 +8,7 @@ class UpdateTemplateFormRequest extends FormRequest
 {
     public function rules(): array
     {
+        $tableName = $this->segment(2);
         $ignoredPosition = $this->input('ignored_position');
 
         return [
@@ -21,7 +22,7 @@ class UpdateTemplateFormRequest extends FormRequest
             'description.en' => 'required|min:10|max:1024',
             'description.uz' => 'required|min:10|max:1024',
 
-            'position' => "required|integer|min:1|unique:processes,position,$ignoredPosition,position",
+            'position' => "required|integer|min:1|unique:$tableName,position,$ignoredPosition,position",
             'ignored_position' => 'required|integer|min:1',
             'image' => 'nullable|image|max:4096'
         ];

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EquipmentController;
 use App\Http\Controllers\HeroSectionController;
 use App\Http\Controllers\MainInformationController;
 use App\Http\Controllers\ProcessController;
@@ -44,6 +45,8 @@ Route::group([
         ->parameters(['contacts' => 'companyDetail']);
 
     Route::resource('processes', ProcessController::class)->except('show');
+
+    Route::resource('equipment', EquipmentController::class)->except('show');
 
 });
 

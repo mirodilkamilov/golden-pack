@@ -8,6 +8,8 @@ class StoreTemplateFormRequest extends FormRequest
 {
     public function rules(): array
     {
+        $tableName = $this->segment(2);
+
         return [
             'title' => 'required|array|max:3',
             'title.ru' => 'required|min:3|max:255',
@@ -19,7 +21,7 @@ class StoreTemplateFormRequest extends FormRequest
             'description.en' => 'required|min:10|max:1024',
             'description.uz' => 'required|min:10|max:1024',
 
-            'position' => 'required|integer|min:1|unique:processes,position',
+            'position' => "required|integer|min:1|unique:$tableName,position",
             'image' => 'required|image|max:4096'
         ];
     }

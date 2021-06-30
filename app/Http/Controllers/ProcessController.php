@@ -12,21 +12,21 @@ class ProcessController extends Controller
 {
     public function index()
     {
-        $processes = Process::all();
-        return view('dashboard.processes.index', compact('processes'));
+        $contents = Process::all();
+        return view('dashboard.template.index', compact('contents'));
     }
 
     public function create()
     {
         $positions = Process::orderBy('position')->pluck('position')->toArray();
-        return view('dashboard.processes.create-edit', compact('positions'));
+        return view('dashboard.template.create-edit', compact('positions'));
     }
 
     public function store(StoreTemplateFormRequest $request)
     {
         try {
             $process = new Process;
-            StoreTemplateJob::dispatchSync($request, $process, 'process');
+            StoreTemplateJob::dispatchSync($request, $process, 'processes');
         } catch (\Exception $exception) {
             $request->session()->flash('error', $exception->getMessage());
             return redirect()->route('processes.index');
@@ -38,18 +38,18 @@ class ProcessController extends Controller
 
     public function edit($process)
     {
-        $process = Process::withoutEvents(function () use ($process) {
+        $content = Process::withoutEvents(function () use ($process) {
             return Process::findOrFail($process);
         });
         $positions = Process::orderBy('position')->pluck('position')->toArray();
 
-        return view('dashboard.processes.create-edit', compact('process', 'positions'));
+        return view('dashboard.template.create-edit', compact('content', 'positions'));
     }
 
     public function update(UpdateTemplateFormRequest $request, Process $process)
     {
         try {
-            UpdateTemplateJob::dispatchSync($request, $process, 'process');
+            UpdateTemplateJob::dispatchSync($request, $process, 'processes');
         } catch (\Exception $exception) {
             $request->session()->flash('error', $exception->getMessage());
             return redirect()->route('processes.index');
