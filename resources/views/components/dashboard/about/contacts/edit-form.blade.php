@@ -58,100 +58,101 @@
    </div>
 
    <div class="row">
-      <div class="col-6">
-         <div class="form-label-group">
+      <div class="address-container col-6">
+         <div class="col-12 pl-0">
+            <div class="form-label-group">
             <textarea name="contacts[address]" id="address"
                       class="form-control @error('contacts.address') is-invalid @enderror"
                       placeholder="{{ __('Address') }}"
                       type="text">{{ old('contacts.address') ?? $content->address }}</textarea>
-            <label for="address">{{ __('Address') }}</label>
-            @error('contacts.address')
-            <p class="text-danger pt-1 mb-0">{{ $message }}</p>
-            @enderror
-         </div>
-      </div>
-
-      @php $i = 0; @endphp
-      <div class="col-6">
-         <label for="telegram">Telegram</label>
-         <div class="input-group mb-75">
-            <div class="input-group-prepend">
-               <span class="input-group-text fa fa-telegram"></span>
+               <label for="address">{{ __('Address') }}</label>
+               @error('contacts.address')
+               <p class="text-danger pt-1 mb-0">{{ $message }}</p>
+               @enderror
             </div>
-            <input name="contacts[social_media][{{ $i }}][url]" type="text"
-                   value="{{ old("contacts.social_media.$i.url") ?? $content->social_media[$i]['url'] }}"
-                   class="form-control @error("contacts.social_media.$i.url") is-invalid @enderror" id="telegram"
-                   placeholder="https://t.me/username">
-            <input type="hidden" name="contacts[social_media][{{ $i }}][name]" value="telegram">
-            @error("contacts.social_media.$i.url")
-            <p class="text-danger">{{ $message }}</p>
-            @enderror
          </div>
-      </div>
-   </div>
 
-   <div class="row">
-      <div class="col-6 mt-1">
-         <fieldset class="form-label-group">
+         <div class="col-12 pl-0 mt-1">
+            <fieldset class="form-label-group">
             <textarea name="contacts[google_map]"
                       class="form-control @error('contacts.google_map') is-invalid @enderror"
                       id="google-map" rows="7"
                       placeholder="{{ __('Google Map') }}"
                       spellcheck="false">{{ old('contacts.google_map') ?? $content->google_map }}</textarea>
-            <label for="google-map">{{ __('Google Map') }}</label>
-            @error('contacts.google_map')
-            <p class="text-danger pt-1 mb-0">{{ $message }}</p>
-            @enderror
-         </fieldset>
+               <label for="google-map">{{ __('Google Map') }}</label>
+               @error('contacts.google_map')
+               <p class="text-danger pt-1 mb-0">{{ $message }}</p>
+               @enderror
+            </fieldset>
+         </div>
       </div>
 
-      <div class="col-6" style="transform: translateY(-16px);">
-         @php ++$i; @endphp
-         <label for="facebook">Facebook</label>
-         <div class="input-group mb-75">
-            <div class="input-group-prepend">
-               <span class="input-group-text fa fa-facebook"></span>
+      <div class="social-media col-6">
+         @php $i = 0; @endphp
+         <div class="col-12 pl-0">
+            <label for="telegram">Telegram</label>
+            <div class="input-group mb-75">
+               <div class="input-group-prepend">
+                  <span class="input-group-text fa fa-telegram"></span>
+               </div>
+               <input name="contacts[social_media][{{ $i }}][url]" type="text"
+                      value="{{ old("contacts.social_media.$i.url") ?? $content->social_media[$i]['url'] }}"
+                      class="form-control @error("contacts.social_media.$i.url") is-invalid @enderror" id="telegram"
+                      placeholder="https://t.me/username">
+               <input type="hidden" name="contacts[social_media][{{ $i }}][name]" value="telegram">
+               @error("contacts.social_media.$i.url")
+               <p class="text-danger">{{ $message }}</p>
+               @enderror
             </div>
-            <input name="contacts[social_media][{{ $i }}][url]" type="text"
-                   value="{{ old("contacts.social_media.$i.url") ?? $content->social_media[$i]['url'] }}"
-                   class="form-control @error("contacts.social_media.$i.url") is-invalid @enderror" id="facebook"
-                   placeholder="https://www.facebook.com">
-            <input type="hidden" name="contacts[social_media][{{ $i }}][name]" value="facebook">
-            @error("contacts.social_media.$i.url")
-            <p class="text-danger">{{ $message }}</p>
-            @enderror
          </div>
-
-         @php ++$i; @endphp
-         <label for="instagram">Instagram</label>
-         <div class="input-group mb-75">
-            <div class="input-group-prepend">
-               <span class="input-group-text fa fa-instagram"></span>
+         <div class="col-12 pl-0">
+            @php ++$i; @endphp
+            <label for="facebook">Facebook</label>
+            <div class="input-group mb-75">
+               <div class="input-group-prepend">
+                  <span class="input-group-text fa fa-facebook"></span>
+               </div>
+               <input name="contacts[social_media][{{ $i }}][url]" type="text"
+                      value="{{ old("contacts.social_media.$i.url") ?? $content->social_media[$i]['url'] }}"
+                      class="form-control @error("contacts.social_media.$i.url") is-invalid @enderror" id="facebook"
+                      placeholder="https://www.facebook.com">
+               <input type="hidden" name="contacts[social_media][{{ $i }}][name]" value="facebook">
+               @error("contacts.social_media.$i.url")
+               <p class="text-danger">{{ $message }}</p>
+               @enderror
             </div>
-            <input name="contacts[social_media][{{ $i }}][url]" type="text"
-                   value="{{ old("contacts.social_media.$i.url") ?? $content->social_media[$i]['url'] }}"
-                   class="form-control @error("contacts.social_media.$i.url") is-invalid @enderror" id="instagram"
-                   placeholder="https://www.instagram.com">
-            <input type="hidden" name="contacts[social_media][{{ $i }}][name]" value="instagram">
-            @error("contacts.social_media.$i.url")
-            <p class="text-danger">{{ $message }}</p>
-            @enderror
-         </div>
 
-         @php ++$i; @endphp
-         <label for="linkedin">Linkedin</label>
-         <div class="input-group mb-75">
-            <div class="input-group-prepend">
-               <span class="input-group-text fa fa-linkedin"></span>
+            @php ++$i; @endphp
+            <label for="instagram">Instagram</label>
+            <div class="input-group mb-75">
+               <div class="input-group-prepend">
+                  <span class="input-group-text fa fa-instagram"></span>
+               </div>
+               <input name="contacts[social_media][{{ $i }}][url]" type="text"
+                      value="{{ old("contacts.social_media.$i.url") ?? $content->social_media[$i]['url'] }}"
+                      class="form-control @error("contacts.social_media.$i.url") is-invalid @enderror" id="instagram"
+                      placeholder="https://www.instagram.com">
+               <input type="hidden" name="contacts[social_media][{{ $i }}][name]" value="instagram">
+               @error("contacts.social_media.$i.url")
+               <p class="text-danger">{{ $message }}</p>
+               @enderror
             </div>
-            <input name="contacts[social_media][{{ $i }}][url]" type="text"
-                   value="{{ old("contacts.social_media.$i.url") ?? $content->social_media[$i]['url'] }}"
-                   class="form-control @error("contacts.social_media.$i.url") is-invalid @enderror" id="linkedin"
-                   placeholder="https://www.linkedin.com">
-            <input type="hidden" name="contacts[social_media][{{ $i }}][name]" value="linkedin">
-            @error("contacts.social_media.$i.url")
-            <p class="text-danger">{{ $message }}</p>
-            @enderror
+
+            @php ++$i; @endphp
+            <label for="linkedin">Linkedin</label>
+            <div class="input-group mb-75">
+               <div class="input-group-prepend">
+                  <span class="input-group-text fa fa-linkedin"></span>
+               </div>
+               <input name="contacts[social_media][{{ $i }}][url]" type="text"
+                      value="{{ old("contacts.social_media.$i.url") ?? $content->social_media[$i]['url'] }}"
+                      class="form-control @error("contacts.social_media.$i.url") is-invalid @enderror" id="linkedin"
+                      placeholder="https://www.linkedin.com">
+               <input type="hidden" name="contacts[social_media][{{ $i }}][name]" value="linkedin">
+               @error("contacts.social_media.$i.url")
+               <p class="text-danger">{{ $message }}</p>
+               @enderror
+            </div>
          </div>
       </div>
    </div>
