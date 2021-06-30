@@ -64,7 +64,7 @@
 
               var modal = $('#confirm-modal');
               var modalBody = modal.find('.modal-body');
-              modalBody.empty().append('<h4 class="modal-title text-danger">' + title + '<h5/>');
+              modalBody.empty().append('<h4 class="modal-title text-danger">' + title + '<h4/>');
               modalBody.append('<img class="preview" src="' + image + '" width="200px" />');
               modalBody.append('<p class="mt-1 mb-0">Position: ' + position + '</p>');
 

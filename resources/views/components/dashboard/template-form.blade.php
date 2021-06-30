@@ -49,7 +49,7 @@
          @enderror
          <x-dashboard.available-positions :positions="$positions"/>
          @if(isset($content))
-            <input type="hidden" name="position_old" value="{{ $content->position }}">
+            <input type="hidden" name="ignored_position" value="{{ $content->position }}">
          @endif
       </div>
       <fieldset class="form-group">

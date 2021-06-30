@@ -61,6 +61,9 @@ class ProcessController extends Controller
 
     public function destroy(Process $process)
     {
-        //
+        $process->delete();
+
+        session()->flash('success', 'Process was successfully deleted!');
+        return redirect()->route('processes.index');
     }
 }

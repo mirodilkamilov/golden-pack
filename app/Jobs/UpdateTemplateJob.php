@@ -22,7 +22,7 @@ class UpdateTemplateJob
     public function __construct(UpdateTemplateFormRequest $request, $model, $directoryNameToStoreImage = 'other')
     {
         $this->validated = $request->validated();
-        unset($this->validated['image'], $this->validated['position_old']);
+        unset($this->validated['image'], $this->validated['ignored_position']);
 
         $this->request = $request;
         $this->directoryNameToStoreImage = $directoryNameToStoreImage;

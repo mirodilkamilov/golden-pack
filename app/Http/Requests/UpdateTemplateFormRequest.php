@@ -8,7 +8,7 @@ class UpdateTemplateFormRequest extends FormRequest
 {
     public function rules(): array
     {
-        $ignoredPosition = $this->input('position_old');
+        $ignoredPosition = $this->input('ignored_position');
 
         return [
             'title' => 'required|array|max:3',
@@ -22,7 +22,7 @@ class UpdateTemplateFormRequest extends FormRequest
             'description.uz' => 'required|min:10|max:1024',
 
             'position' => "required|integer|min:1|unique:processes,position,$ignoredPosition,position",
-            'position_old' => 'required|integer|min:1',
+            'ignored_position' => 'required|integer|min:1',
             'image' => 'nullable|image|max:4096'
         ];
     }
