@@ -112,7 +112,7 @@ table.table-bordered td {
     border: 1px solid #dedede;
 }
 
-table.dataTable {
+#data-table {
     border-right: 1px solid #dedede;
     border-left: 1px solid #dedede;
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HeroSectionController;
 use App\Http\Controllers\MainInformationController;
+use App\Http\Controllers\ProcessController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +42,9 @@ Route::group([
 
     Route::resource('contacts', ContactsController::class)->only('index', 'store', 'update')
         ->parameters(['contacts' => 'companyDetail']);
+
+    Route::resource('processes', ProcessController::class)->except('show');
+
 });
 
 require __DIR__ . '/auth.php';

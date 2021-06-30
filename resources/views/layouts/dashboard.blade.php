@@ -164,8 +164,8 @@
             </ul>
          </li>
 
-         <li class="nav-item ">
-            <a href="">
+         <li class="nav-item {{ active('processes.*') }}">
+            <a href="{{ route('processes.index') }}">
                <i class="feather icon-package"></i>
                <span class="menu-title">{{ __('Packaging process') }}</span>
             </a>
