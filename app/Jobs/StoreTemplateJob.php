@@ -8,7 +8,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 /**
  * Stores new records in all similar tables
  *
- * $request, $model, $directoryNameToStoreImage
+ * $request, $model
  */
 class StoreTemplateJob
 {
@@ -20,13 +20,13 @@ class StoreTemplateJob
     private $model;
 
 
-    public function __construct(StoreTemplateFormRequest $request, $model, $directoryNameToStoreImage = 'other')
+    public function __construct(StoreTemplateFormRequest $request, $model)
     {
         $this->validated = $request->validated();
         unset($this->validated['image']);
 
         $this->request = $request;
-        $this->directoryNameToStoreImage = $directoryNameToStoreImage;
+        $this->directoryNameToStoreImage = $request->segment(2) ?? 'other';
         $this->model = $model;
     }
 

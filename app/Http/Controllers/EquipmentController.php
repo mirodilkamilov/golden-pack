@@ -7,7 +7,6 @@ use App\Http\Requests\UpdateTemplateFormRequest;
 use App\Jobs\StoreTemplateJob;
 use App\Jobs\UpdateTemplateJob;
 use App\Models\Equipment;
-use App\Models\Process;
 
 class EquipmentController extends Controller
 {
@@ -27,7 +26,7 @@ class EquipmentController extends Controller
     {
         try {
             $equipment = new Equipment();
-            StoreTemplateJob::dispatchSync($request, $equipment, 'equipments');
+            StoreTemplateJob::dispatchSync($request, $equipment);
         } catch (\Exception $exception) {
             $request->session()->flash('error', $exception->getMessage());
             return redirect()->route('equipment.index');
@@ -50,7 +49,7 @@ class EquipmentController extends Controller
     public function update(UpdateTemplateFormRequest $request, Equipment $equipment)
     {
         try {
-            UpdateTemplateJob::dispatchSync($request, $equipment, 'equipments');
+            UpdateTemplateJob::dispatchSync($request, $equipment);
         } catch (\Exception $exception) {
             $request->session()->flash('error', $exception->getMessage());
             return redirect()->route('equipment.index');

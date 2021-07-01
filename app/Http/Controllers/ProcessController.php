@@ -26,7 +26,7 @@ class ProcessController extends Controller
     {
         try {
             $process = new Process;
-            StoreTemplateJob::dispatchSync($request, $process, 'processes');
+            StoreTemplateJob::dispatchSync($request, $process);
         } catch (\Exception $exception) {
             $request->session()->flash('error', $exception->getMessage());
             return redirect()->route('processes.index');
@@ -49,7 +49,7 @@ class ProcessController extends Controller
     public function update(UpdateTemplateFormRequest $request, Process $process)
     {
         try {
-            UpdateTemplateJob::dispatchSync($request, $process, 'processes');
+            UpdateTemplateJob::dispatchSync($request, $process);
         } catch (\Exception $exception) {
             $request->session()->flash('error', $exception->getMessage());
             return redirect()->route('processes.index');
