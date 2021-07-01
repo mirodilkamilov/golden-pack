@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdvantageController;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\DashboardController;
@@ -53,6 +54,8 @@ Route::group([
     Route::resource('portfolios', PortfolioController::class)->except('show');
 
     Route::resource('testimonials', TestimonialController::class)->except('show');
+
+    Route::resource('advantages', AdvantageController::class)->except('show');
 
 });
 

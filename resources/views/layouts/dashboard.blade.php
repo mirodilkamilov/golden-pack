@@ -188,8 +188,8 @@
                <span class="menu-title">{{ __('Testimonials') }}</span>
             </a>
          </li>
-         <li class="nav-item ">
-            <a href="">
+         <li class="nav-item {{ active('advantages.*') }}">
+            <a href="{{ route('advantages.index') }}">
                <i class="feather icon-thumbs-up"></i>
                <span class="menu-title">{{ __('Advantages') }}</span>
             </a>
