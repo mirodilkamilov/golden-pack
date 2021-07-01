@@ -182,8 +182,8 @@
                <span class="menu-title">{{ __('Portfolios') }}</span>
             </a>
          </li>
-         <li class="nav-item ">
-            <a href="">
+         <li class="nav-item {{ active('testimonials.*') }}">
+            <a href="{{ route('testimonials.index') }}">
                <i class="fa fa-quote-left"></i>
                <span class="menu-title">{{ __('Testimonials') }}</span>
             </a>

@@ -8,6 +8,7 @@ use App\Http\Controllers\HeroSectionController;
 use App\Http\Controllers\MainInformationController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProcessController;
+use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -50,6 +51,8 @@ Route::group([
     Route::resource('equipment', EquipmentController::class)->except('show');
 
     Route::resource('portfolios', PortfolioController::class)->except('show');
+
+    Route::resource('testimonials', TestimonialController::class)->except('show');
 
 });
 
