@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use App\Models\Equipment;
+use App\Models\Portfolio;
 use App\Models\Process;
 use App\Observers\EquipmentObserver;
+use App\Observers\PortfolioObserver;
 use App\Observers\ProcessObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -32,5 +34,6 @@ class EventServiceProvider extends ServiceProvider
     {
         Process::observe(ProcessObserver::class);
         Equipment::observe(EquipmentObserver::class);
+        Portfolio::observe(PortfolioObserver::class);
     }
 }

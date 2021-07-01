@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Equipment;
+use App\Models\Portfolio;
 use Illuminate\Database\Seeder;
 
 class PortfolioSeeder extends Seeder
@@ -14,6 +15,6 @@ class PortfolioSeeder extends Seeder
      */
     public function run(): void
     {
-        Equipment::factory()->count(3)->create();
+        Portfolio::factory()->count(5)->create();
     }
 }

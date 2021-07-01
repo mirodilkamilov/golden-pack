@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EquipmentController;
 use App\Http\Controllers\HeroSectionController;
 use App\Http\Controllers\MainInformationController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProcessController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -47,6 +48,8 @@ Route::group([
     Route::resource('processes', ProcessController::class)->except('show');
 
     Route::resource('equipment', EquipmentController::class)->except('show');
+
+    Route::resource('portfolios', PortfolioController::class)->except('show');
 
 });
 

@@ -16,4 +16,8 @@ class Portfolio extends Model
         'description' => 'array'
     ];
 
+    public function getImageAttribute($value)
+    {
+        return '/assets/uploads/' . $value;
+    }
 }

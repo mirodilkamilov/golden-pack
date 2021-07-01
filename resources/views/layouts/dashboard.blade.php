@@ -176,8 +176,8 @@
                <span class="menu-title">{{ __('Equipments') }}</span>
             </a>
          </li>
-         <li class="nav-item ">
-            <a href="">
+         <li class="nav-item {{ active('portfolios.*') }}">
+            <a href="{{ route('portfolios.index') }}">
                <i class="feather icon-briefcase"></i>
                <span class="menu-title">{{ __('Portfolios') }}</span>
             </a>

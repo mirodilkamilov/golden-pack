@@ -14,6 +14,6 @@ class EquipmentSeeder extends Seeder
      */
     public function run(): void
     {
-        Equipment::factory()->count(3)->create();
+        Equipment::factory()->count(5)->create();
     }
 }
