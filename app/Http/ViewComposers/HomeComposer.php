@@ -13,10 +13,10 @@ class HomeComposer
 
     public function __construct(Request $request)
     {
-        $titleOfPage = $request->segment(2) ?? 'Digital agency';
+        $titleOfPage = $request->segment(2) ?? 'Golden Pack';
         $this->titleOfPage = Str::title($titleOfPage);
 
-        $this->locale = app()->getLocale() ?? config('app.default_language');
+        $this->locale = session('locale') ?? config('app.default_language');
     }
 
     public function compose(View $view): void

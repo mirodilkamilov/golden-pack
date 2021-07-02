@@ -7,6 +7,7 @@ use App\Http\Controllers\CooperationController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EquipmentController;
 use App\Http\Controllers\HeroSectionController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MainInformationController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProcessController;
@@ -26,8 +27,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('home.index');
+    $defaultLang = config('app.default_language');
+    $langInSession = session('locale');
+    $locale = $langInSession ?? $defaultLang;
+
+    return redirect()->route('home.index', $locale);
+});
+Route::group([
+    'prefix' => '{locale}',
+    'where' => ['locale' => implode('|', config('app.languages'))],
+    'middleware' => 'home.setLocale',
+], function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home.index');
+});
 
 Route::group([
     'prefix' => 'dashboard',
@@ -58,7 +70,7 @@ Route::group([
 
     Route::resource('advantages', AdvantageController::class)->except('show');
 
-    Route::resource('cooperation', CooperationController::class)->except('show', 'create', 'edit', 'destroy');
+    Route::resource('cooperation', CooperationController::class)->except('create', 'edit', 'show', 'destroy');
 });
 
 require __DIR__ . '/auth.php';
