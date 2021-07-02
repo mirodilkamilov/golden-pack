@@ -3,11 +3,13 @@
 namespace App\Providers;
 
 use App\Models\Advantage;
+use App\Models\Cooperation;
 use App\Models\Equipment;
 use App\Models\Portfolio;
 use App\Models\Process;
 use App\Models\Testimonial;
 use App\Observers\AdvantageObserver;
+use App\Observers\CooperationObserver;
 use App\Observers\EquipmentObserver;
 use App\Observers\PortfolioObserver;
 use App\Observers\ProcessObserver;
@@ -41,5 +43,6 @@ class EventServiceProvider extends ServiceProvider
         Portfolio::observe(PortfolioObserver::class);
         Testimonial::observe(TestimonialObserver::class);
         Advantage::observe(AdvantageObserver::class);
+        Cooperation::observe(CooperationObserver::class);
     }
 }

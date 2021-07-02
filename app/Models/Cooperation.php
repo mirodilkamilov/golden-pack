@@ -15,4 +15,8 @@ class Cooperation extends Model
         'list' => 'array'
     ];
 
+    public function getImageAttribute($value)
+    {
+        return '/assets/uploads/' . $value;
+    }
 }

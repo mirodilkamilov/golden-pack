@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdvantageController;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\CooperationController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EquipmentController;
 use App\Http\Controllers\HeroSectionController;
@@ -57,6 +58,7 @@ Route::group([
 
     Route::resource('advantages', AdvantageController::class)->except('show');
 
+    Route::resource('cooperation', CooperationController::class)->except('show', 'create', 'edit', 'destroy');
 });
 
 require __DIR__ . '/auth.php';

@@ -23,18 +23,34 @@ class CooperationFactory extends Factory
     {
         return [
             'list' => [
-                'ru' => [
-                    'title' => 'ru-' . $this->faker->word,
-                    'description' => 'ru-' . $this->faker->sentence
+                0 => [
+                    'ru' => [
+                        'title' => '0-ru-' . $this->faker->word,
+                        'description' => '0-ru-' . $this->faker->sentence
+                    ],
+                    'en' => [
+                        'title' => '0-en-' . $this->faker->word,
+                        'description' => '0-en-' . $this->faker->sentence
+                    ],
+                    'uz' => [
+                        'title' => '0-uz-' . $this->faker->word,
+                        'description' => '0-uz-' . $this->faker->sentence
+                    ],
                 ],
-                'en' => [
-                    'title' => 'en-' . $this->faker->word,
-                    'description' => 'en-' . $this->faker->sentence
-                ],
-                'uz' => [
-                    'title' => 'uz-' . $this->faker->word,
-                    'description' => 'uz-' . $this->faker->sentence
-                ],
+                1 => [
+                    'ru' => [
+                        'title' => '1-ru-' . $this->faker->word,
+                        'description' => '1-ru-' . $this->faker->sentence
+                    ],
+                    'en' => [
+                        'title' => '1-en-' . $this->faker->word,
+                        'description' => '1-en-' . $this->faker->sentence
+                    ],
+                    'uz' => [
+                        'title' => '1-uz-' . $this->faker->word,
+                        'description' => '1-uz-' . $this->faker->sentence
+                    ],
+                ]
             ],
             'image' => 'other/test-content' . $this->faker->numberBetween(1, 5) . '.png',
         ];
