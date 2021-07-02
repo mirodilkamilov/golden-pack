@@ -20,10 +20,17 @@
 
 .list-item .add-list-item,
 .list-item .remove-list-item,
-.card-footer .remove-content {
+.card-footer .remove-content,
+.remove-content-container .remove-content {
     font-size: 1.5rem;
     z-index: 100;
     cursor: pointer;
+}
+
+.remove-content-container .remove-content {
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .content-body .card-footer {

@@ -194,8 +194,8 @@
                <span class="menu-title">{{ __('Advantages') }}</span>
             </a>
          </li>
-         <li class="nav-item ">
-            <a href="">
+         <li class="nav-item {{ active('cooperation.*') }}">
+            <a href="{{ route('cooperation.index') }}">
                <i class="fa fa-handshake-o"></i>
                <span class="menu-title">{{ __('Cooperation') }}</span>
             </a>
@@ -246,6 +246,7 @@
 @stack('image-preview')
 @stack('change-language-tabs')
 @stack('ckeditor')
+@stack('text-form-manipulation')
 @stack('company-contacts-list-manipulation')
 <!-- END: Page JS-->
 
