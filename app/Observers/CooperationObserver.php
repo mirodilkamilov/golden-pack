@@ -17,11 +17,12 @@ class CooperationObserver
 
     public function retrieved(Cooperation $cooperation): void
     {
+        $lists = collect();
         if (isset($cooperation->list)) {
-            foreach ($cooperation->list as &$list) {
-                $list = $list[$this->locale] ?? $list[$this->defaultLang];
+            foreach ($cooperation->list as $list) {
+                $lists->push($list[$this->locale] ?? $list[$this->defaultLang]);
             }
-            unset($list);
+            $cooperation->list = $lists;
         }
     }
 }

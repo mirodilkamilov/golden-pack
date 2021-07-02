@@ -3,12 +3,14 @@
 namespace App\Providers;
 
 use App\Models\Advantage;
+use App\Models\CompanyDetail;
 use App\Models\Cooperation;
 use App\Models\Equipment;
 use App\Models\Portfolio;
 use App\Models\Process;
 use App\Models\Testimonial;
 use App\Observers\AdvantageObserver;
+use App\Observers\CompanyDetailObserver;
 use App\Observers\CooperationObserver;
 use App\Observers\EquipmentObserver;
 use App\Observers\PortfolioObserver;
@@ -38,6 +40,7 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        CompanyDetail::observe(CompanyDetailObserver::class);
         Process::observe(ProcessObserver::class);
         Equipment::observe(EquipmentObserver::class);
         Portfolio::observe(PortfolioObserver::class);
