@@ -12,7 +12,9 @@ class MainInformationController extends Controller
 {
     public function index()
     {
-        $about = CompanyDetail::first();
+        $about = CompanyDetail::withoutEvents(function () {
+            return CompanyDetail::select(['id', 'about_title', 'about_description', 'about_image'])->first();
+        });
         return view('dashboard.about.main.index', compact('about'));
     }
 

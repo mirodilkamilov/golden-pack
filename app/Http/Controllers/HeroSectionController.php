@@ -12,7 +12,9 @@ class HeroSectionController extends Controller
 {
     public function index()
     {
-        $about = CompanyDetail::first();
+        $about = CompanyDetail::withoutEvents(function () {
+            return CompanyDetail::select(['id', 'title', 'description', 'image'])->first();
+        });
         return view('dashboard.about.hero.index', compact('about'));
     }
 

@@ -11,7 +11,9 @@ class ContactsController extends Controller
 {
     public function index()
     {
-        $about = CompanyDetail::first();
+        $about = CompanyDetail::withoutEvents(function () {
+            return CompanyDetail::select(['id', 'address', 'phone', 'email', 'google_map', 'social_media'])->first();
+        });
         return view('dashboard.about.contacts.index', compact('about'));
     }
 
