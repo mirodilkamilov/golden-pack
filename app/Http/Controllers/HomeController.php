@@ -10,7 +10,7 @@ use App\Models\Portfolio;
 use App\Models\Process;
 use App\Models\Testimonial;
 
-class HomeController extends Controller
+class HomeController
 {
     public function index()
     {

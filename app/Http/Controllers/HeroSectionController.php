@@ -31,8 +31,12 @@ class HeroSectionController extends Controller
         return redirect()->route('hero-section.index');
     }
 
-    public function update(UpdateHeroSectionRequest $request, CompanyDetail $companyDetail)
+    public function update(UpdateHeroSectionRequest $request, $companyDetail)
     {
+        $companyDetail = CompanyDetail::withoutEvents(function () use ($companyDetail) {
+            return CompanyDetail::findOrFail($companyDetail);
+        });
+
         try {
             UpdateHeroSectionJob::dispatchSync($request, $companyDetail);
         } catch (\Exception $exception) {

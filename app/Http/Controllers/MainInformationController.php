@@ -31,8 +31,12 @@ class MainInformationController extends Controller
         return redirect()->route('main-information.index');
     }
 
-    public function update(UpdateMainInformationRequest $request, CompanyDetail $companyDetail)
+    public function update(UpdateMainInformationRequest $request, $companyDetail)
     {
+        $companyDetail = CompanyDetail::withoutEvents(function () use ($companyDetail) {
+            return CompanyDetail::findOrFail($companyDetail);
+        });
+
         try {
             UpdateMainInformationJob::dispatchSync($request, $companyDetail);
         } catch (\Exception $exception) {

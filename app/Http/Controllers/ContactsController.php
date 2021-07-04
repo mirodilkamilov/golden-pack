@@ -32,6 +32,10 @@ class ContactsController extends Controller
 
     public function update(HandleContactsRequest $request, CompanyDetail $companyDetail)
     {
+        $companyDetail = CompanyDetail::withoutEvents(function () use ($companyDetail) {
+            return CompanyDetail::findOrFail($companyDetail);
+        });
+
         try {
             UpdateContactsJob::dispatchSync($request, $companyDetail);
         } catch (\Exception $exception) {

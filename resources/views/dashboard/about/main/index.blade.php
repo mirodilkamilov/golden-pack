@@ -28,8 +28,8 @@
                                     @csrf
 
                                     @php $inputs = [
-                                     'title',
-                                     'description',
+                                     'about_title',
+                                     'about_description',
                                     ];
                                     @endphp
                                     <x-dashboard.language-tabs :availableLangs="$availableLangs"
