@@ -30,7 +30,7 @@ class ContactsController extends Controller
         return redirect()->route('contacts.index');
     }
 
-    public function update(HandleContactsRequest $request, CompanyDetail $companyDetail)
+    public function update(HandleContactsRequest $request, $companyDetail)
     {
         $companyDetail = CompanyDetail::withoutEvents(function () use ($companyDetail) {
             return CompanyDetail::findOrFail($companyDetail);

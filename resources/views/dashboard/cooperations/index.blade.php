@@ -59,7 +59,7 @@
                                  @php
                                     $lists = $content->list ?? array(0 => ['ru' => ['title' => '', 'description' => ''],'en' => ['title' => '', 'description' => ''],'uz' => ['title' => '', 'description' => ''],]);
 
-                                    if($errors->hasAny(['list.*.*.title', 'list.*.*.description']))
+                                    if($errors->hasAny(['list.*.*.title', 'list.*.*.description', 'image']))
                                        $lists = old()['list'];
                                  @endphp
                                  <x-dashboard.title-description-form :availableLangs="$availableLangs" :lists="$lists"/>

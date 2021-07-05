@@ -13,8 +13,12 @@ class UpdateCooperationRequest extends FormRequest
             'list' => 'required|array|min:1|max:10',
             'list.*' => 'required|array|min:3|max:3',
             'list.*.*' => 'required|array|min:2|max:2',
-            'list.*.*.title' => 'required|min:3|max:255',
-            'list.*.*.description' => 'required|min:10|max:500'
+            'list.*.ru.title' => 'required|min:3|max:255',
+            'list.*.en.title' => 'required|min:3|max:255',
+            'list.*.uz.title' => 'required|min:3|max:255',
+            'list.*.ru.description' => 'required|min:10|max:500',
+            'list.*.en.description' => 'required|min:10|max:500',
+            'list.*.uz.description' => 'required|min:10|max:500'
         ];
     }
 
