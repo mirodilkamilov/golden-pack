@@ -12,7 +12,7 @@
          <p class="text-danger mb-1">{{ $message }}</p>
          @enderror
          <div class="form-label-group list-item mb-0">
-            <input name="contacts[phone][{{ $i }}]" value="{{ old("contacts.phone.$i") }}"
+            <input name="contacts[phone][]" value="{{ old("contacts.phone.$i") }}"
                    class="form-control @error("contacts.phone.$i") is-invalid @enderror" id="phone"
                    placeholder="{{ __('Phone') }}" type="text" autofocus>
             <i class="feather icon-plus-circle text-primary pl-1 add-list-item"
@@ -46,7 +46,7 @@
       @endphp
       <div class="list-item-container col-6 mt-0 mb-1">
          <div class="form-label-group list-item mb-0">
-            <input name="contacts[email][{{ $i }}]" value="{{ old("contacts.email.$i") }}"
+            <input name="contacts[email][]" value="{{ old("contacts.email.$i") }}"
                    id="email"
                    class="form-control @error("contacts.email.$i") is-invalid @enderror"
                    placeholder="{{ __('Email') }}" type="email">

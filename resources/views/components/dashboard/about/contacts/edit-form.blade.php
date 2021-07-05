@@ -14,7 +14,7 @@
       @foreach($content->phone as $phone)
          <div class="list-item-container col-6 mt-0 mb-2">
             <div class="form-label-group list-item mb-0">
-               <input name="contacts[phone][{{ $loop->iteration }}]"
+               <input name="contacts[phone][]"
                       value="{{ old("contacts.phone.$loop->iteration") ?? $phone }}"
                       class="form-control @error("contacts.phone.$loop->iteration") is-invalid @enderror" id="phone"
                       placeholder="{{ __('Phone') }}" type="text" autofocus>
@@ -40,7 +40,7 @@
       @foreach($content->email as $email)
          <div class="list-item-container col-6 mt-0 mb-1">
             <div class="form-label-group list-item mb-0">
-               <input name="contacts[email][{{ $loop->iteration }}]"
+               <input name="contacts[email][]"
                       value="{{ old("contacts.email.$loop->iteration") ?? $email }}" id="email"
                       class="form-control @error("contacts.email.$loop->iteration") is-invalid @enderror"
                       placeholder="{{ __('Email') }}" type="email">
