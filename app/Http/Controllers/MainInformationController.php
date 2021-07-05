@@ -31,12 +31,9 @@ class MainInformationController extends Controller
         return redirect()->route('main-information.index');
     }
 
-    public function update(UpdateMainInformationRequest $request, $companyDetail)
+    //! route model binding - resolution logic changed. Gets without events (RouteServiceProvider.php)
+    public function update(UpdateMainInformationRequest $request, CompanyDetail $companyDetail)
     {
-        $companyDetail = CompanyDetail::withoutEvents(function () use ($companyDetail) {
-            return CompanyDetail::findOrFail($companyDetail);
-        });
-
         try {
             UpdateMainInformationJob::dispatchSync($request, $companyDetail);
         } catch (\Exception $exception) {

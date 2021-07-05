@@ -31,12 +31,9 @@ class HeroSectionController extends Controller
         return redirect()->route('hero-section.index');
     }
 
-    public function update(UpdateHeroSectionRequest $request, $companyDetail)
+    //! route model binding - resolution logic changed. Gets without events (RouteServiceProvider.php)
+    public function update(UpdateHeroSectionRequest $request, CompanyDetail $companyDetail)
     {
-        $companyDetail = CompanyDetail::withoutEvents(function () use ($companyDetail) {
-            return CompanyDetail::findOrFail($companyDetail);
-        });
-
         try {
             UpdateHeroSectionJob::dispatchSync($request, $companyDetail);
         } catch (\Exception $exception) {

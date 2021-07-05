@@ -30,12 +30,10 @@ class ContactsController extends Controller
         return redirect()->route('contacts.index');
     }
 
-    public function update(HandleContactsRequest $request, $companyDetail)
+    //! route model binding - resolution logic changed. Gets without events (RouteServiceProvider.php)
+    public function update(HandleContactsRequest $request, CompanyDetail $companyDetail)
     {
-        $companyDetail = CompanyDetail::withoutEvents(function () use ($companyDetail) {
-            return CompanyDetail::findOrFail($companyDetail);
-        });
-
+//        dd($request->validated());
         try {
             UpdateContactsJob::dispatchSync($request, $companyDetail);
         } catch (\Exception $exception) {

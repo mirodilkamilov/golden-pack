@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\CompanyDetail;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -46,6 +47,13 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
+        });
+
+        //? gets companyDetails withoutEvents (when route model binding)
+        Route::bind('companyDetail', function ($value) {
+            return CompanyDetail::withoutEvents(function () use ($value) {
+                return CompanyDetail::where('id', $value)->firstOrFail();
+            });
         });
     }
 
