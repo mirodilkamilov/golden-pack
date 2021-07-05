@@ -106,7 +106,7 @@
    <div class="navbar-header">
       <ul class="nav navbar-nav flex-row">
          <li class="nav-item mr-auto">
-            <a class="navbar-brand" href="{{ route('home.index', $locale) }}">
+            <a class="navbar-brand" href="{{ route('index', $locale) }}">
                <img src="/app-assets/images/logo/logo.png" alt="logo" width="35px">
                <h2 class="brand-text mb-0">Golden Pack</h2>
             </a>

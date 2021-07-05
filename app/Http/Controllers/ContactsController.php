@@ -33,7 +33,6 @@ class ContactsController extends Controller
     //! route model binding - resolution logic changed. Gets without events (RouteServiceProvider.php)
     public function update(HandleContactsRequest $request, CompanyDetail $companyDetail)
     {
-//        dd($request->validated());
         try {
             UpdateContactsJob::dispatchSync($request, $companyDetail);
         } catch (\Exception $exception) {

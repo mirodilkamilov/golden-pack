@@ -9,6 +9,7 @@ use App\Models\Equipment;
 use App\Models\Portfolio;
 use App\Models\Process;
 use App\Models\Testimonial;
+use Illuminate\Http\Request;
 
 class HomeController
 {
@@ -23,5 +24,10 @@ class HomeController
         $cooperation = Cooperation::first();
 
         return view('home.index', compact('about', 'processes', 'equipments', 'portfolios', 'testimonials', 'advantages', 'cooperation'));
+    }
+
+    public function store(Request $request)
+    {
+        //
     }
 }

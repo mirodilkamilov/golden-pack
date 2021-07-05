@@ -31,14 +31,14 @@ Route::get('/', function () {
     $langInSession = session('locale');
     $locale = $langInSession ?? $defaultLang;
 
-    return redirect()->route('home.index', $locale);
+    return redirect()->route('index', $locale);
 });
 Route::group([
     'prefix' => '{locale}',
     'where' => ['locale' => implode('|', config('app.languages'))],
     'middleware' => 'home.setLocale',
 ], function () {
-    Route::get('/', [HomeController::class, 'index'])->name('home.index');
+    Route::resource('/', HomeController::class)->only('index', 'store');
 });
 
 Route::group([
