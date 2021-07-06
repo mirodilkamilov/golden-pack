@@ -11,10 +11,7 @@
    <link rel="icon" href="/assets/logo-tab.png" type="image/png">
    <link rel="stylesheet" href="/assets/libs/font-awesome-5-pro/css/all.min.css">
    <link rel="stylesheet" href="/assets/libs/bootstrap-4.5.3-dist/css/bootstrap.min.css">
-   <link rel="stylesheet" href="/assets/libs/fullPage-master/dist/fullpage.min.js">
    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.css" rel="stylesheet">
-   <link rel="stylesheet" href="/assets/libs/animate.css-main/animate.min.css">
-   <link rel="stylesheet" href="/assets/libs/touch-sideswipe-master/dist/touch-sideswipe.min.css">
    <link rel="stylesheet" href="/assets/css/main.min.css">
 </head>
 <body>
@@ -34,14 +31,14 @@
             <li><a href="#contacts">{{ __('Contacts') }}</a></li>
          </ul>
 
-      @if(isset($about->phone))
+      @isset($about->phone)
          <!-- Recall -->
             <div class="callback">
                @foreach($about->phone as $phone)
                   <a href="tel:{{ $phone }}">{{ $phone }}</a>
                @endforeach
             </div>
-      @endif
+      @endisset
 
       <!-- Ham button -->
          <svg class="ham hamRotate" viewBox="0 0 100 100" width="60">
@@ -85,16 +82,38 @@
       <i class="fas fa-times-circle modal-close"></i>
       <!-- Content -->
       <h2 class="sec-tle">{{ __('Leave an application and we will contact you') }}</h2>
-      <form class="app-form">
+      <form action="{{ route('store', $locale) }}" method="post" class="app-form">
+         @csrf
          <div class="row">
-            <div class="col-12 mb-3">
-               <input type="text" placeholder="{{ __('Your name') }}" required="" pattern="^[A-Za-zА-Яа-яЁё\s]+$">
+            <div class="col-12">
+               <div class="form-label-group">
+                  <input name="name" value="{{ old('name') }}" type="text" id="name" class="form-control"
+                         placeholder="{{ __('Your name') }}">
+                  <label for="name">{{ __('Your name') }}</label>
+                  @error('name')
+                  <p class="text-danger">{{ $message }}</p>
+                  @enderror
+               </div>
             </div>
-            <div class="col-12 mb-3">
-               <input type="text" placeholder="{{ __('Phone number') }}" value="+998" id="imask" required="">
+            <div class="col-12">
+               <div class="form-label-group">
+                  <input name="phone" value="{{ old('phone') ?? '+998 ' }}" type="text" id="phone" class="form-control"
+                         placeholder="{{ __('Phone') }}">
+                  <label for="phone">{{ __('Phone') }}</label>
+                  @error('phone')
+                  <p class="text-danger">{{ $message }}</p>
+                  @enderror
+               </div>
             </div>
-            <div class="col-12 mb-3">
-               <input type="e-mail" placeholder="{{ __('Email') }}">
+            <div class="col-12 mb-0">
+               <div class="form-label-group">
+                  <input name="email" value="{{ old('email') }}" type="text" id="email" class="form-control"
+                         placeholder="{{ __('Email') }}">
+                  <label for="email">{{ __('Email') }}</label>
+                  @error('email')
+                  <p class="text-danger">{{ $message }}</p>
+                  @enderror
+               </div>
             </div>
             <div class="col-12">
                <button class="app-btn mx-auto mt-5">{{ Str::upper(__('Leave a request')) }}</button>
@@ -105,13 +124,16 @@
 </div>
 
 <!-- Modal 2 -->
+@php $hasError = session('error') !== null; @endphp
 <div class="app-modal modal-2">
    <div class="app-modal-content">
-      <img src="/assets/img/success.png" alt="Success">
-      <h2 class="sec-tle">{{ __('The application has been sent successfully!') }}</h2>
+      <img src="{{ $hasError ? '/assets/img/error.svg' : '/assets/img/success.png' }}" style="width: 80px;"
+           alt="Success">
+      <h2 class="sec-tle">{{ $hasError ? __(session('error')) : __(session('success')) }}</h2>
       <button class="app-btn mx-auto mt-5 modal-close posr">{{ Str::upper(__('close the window')) }}</button>
    </div>
 </div>
+
 <footer>
    <div class="container">
       <p>Golden Pack &copy; <span id="year"></span> {{ __('all rights reserved') }}</p>
@@ -124,18 +146,20 @@
 </script>
 
 <!-- Vendor -->
-<script defer="" src="/assets/libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
-<script defer="" src="/assets/libs/popper-core-master/src/popper.js"></script>
-<script defer="" src="/assets/libs/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
-<script defer="" src="/assets/libs/swiper-master/src/swiper.js"></script>
-<script defer="" src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-<script defer="" src="/assets/libs/Counter-Up-master/jquery.counterup.min.js"></script>
-<script defer="" src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script defer="" src="/assets/libs/touch-sideswipe-master/dist/touch-sideswipe.min.js"></script>
-<script defer="" src="/assets/libs/WOW-master/dist/wow.min.js"></script>
-<script defer="" src="https://unpkg.com/imask"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+{{--<script defer src="/assets/libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>--}}
+<script defer src="/assets/libs/popper-core-master/src/popper.js"></script>
+<script defer src="/assets/libs/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+<script defer src="/assets/libs/swiper-master/src/swiper.js"></script>
+<script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script defer src="https://unpkg.com/imask"></script>
 <!-- My scripts -->
-<script defer="" src="/assets/js/main.min.js"></script>
-<script defer="" src="/assets/js/libs.min.js"></script>
+<script defer src="/assets/js/main.min.js"></script>
+<script defer src="/assets/js/libs.min.js"></script>
+
+@stack('show-modal-form')
+@stack('show-modal-message')
+
 </body>
 </html>

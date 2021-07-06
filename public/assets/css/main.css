@@ -1400,4 +1400,59 @@ header.scrolled nav {
     top: 50%;
 }
 
+
+/* ? Custom css add */
+.app-form .col-12 {
+    margin-bottom: 2rem;
+}
+
+.form-control:focus {
+    color: #000;
+    outline: 0 !important;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: #f8f8f8;
+    box-shadow: none;
+}
+
+.form-label-group > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    padding: 0.6rem;
+    pointer-events: none;
+    cursor: text;
+    color: rgba(34, 41, 47, 0.4);
+    font-size: 0.85rem;
+    opacity: 0;
+}
+
+.form-label-group > input:not(:placeholder-shown) ~ label, .form-label-group textarea:not(:placeholder-shown) ~ label {
+    padding: 0.25rem 0;
+    font-size: 0.7rem;
+    top: -21px;
+    left: 16px;
+}
+
+.form-label-group > input:not(:focus):not(:placeholder-shown) ~ label, .form-label-group textarea:not(:focus):not(:placeholder-shown) ~ label {
+    color: rgba(34, 41, 47, 0.4) !important;
+}
+
+.form-label-group > input:focus:not(:placeholder-shown) ~ label, .form-label-group > input:not(:active):not(:placeholder-shown) ~ label, .form-label-group textarea:focus:not(:placeholder-shown) ~ label, .form-label-group textarea:not(:active):not(:placeholder-shown) ~ label {
+    color: #7367F0 !important;
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    opacity: 1;
+}
+
+.form-label-group p {
+    text-align: left;
+    margin-top: 0.3rem;
+    font-size: 0.7rem;
+    margin-bottom: 0;
+}
+
 /*# sourceMappingURL=maps/main.css.map */
