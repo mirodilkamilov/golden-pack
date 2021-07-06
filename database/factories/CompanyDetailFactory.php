@@ -38,7 +38,8 @@ class CompanyDetailFactory extends Factory
                 1 => ['url' => $this->faker->url, 'name' => $this->faker->word],
                 2 => ['url' => $this->faker->url, 'name' => $this->faker->word],
                 3 => ['url' => $this->faker->url, 'name' => $this->faker->word],
-            ]
+            ],
+            'google_map' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.59206105294!2d69.29919361527628!3d41.382946954233645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef325df02670f%3A0xb755e6c0c3e469ab!2sYunusabad-16%2C%20Tashkent%20100180%2C%20Uzbekistan!5e0!3m2!1sen!2s!4v1625331158059!5m2!1sen!2s'
         ];
     }
 }

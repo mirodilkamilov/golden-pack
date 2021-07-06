@@ -127,3 +127,10 @@ table.table-bordered td {
 .ck-editor__editable_inline {
     min-height: 150px;
 }
+
+.data-thumb-view td p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+}

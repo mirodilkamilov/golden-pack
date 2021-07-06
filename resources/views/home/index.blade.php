@@ -6,20 +6,16 @@
       <section class="intro" id="intro">
          <div class="intro-item">
             <div class="container">
-               @isset($about->title)
-                  <div class="row">
-                     <div class="col-md-6">
-                        <h1>{{ $about->title }}</h1>
-                        <p>
-                           {!! $about->description !!}
-                        </p>
-                        <button class="app-btn modal-switch-1">{{ Str::upper(__('Leave a request')) }}</button>
-                     </div>
-                     <div class="col-md-6">
-                        <img src="{{ $about->image }}" alt="Golden Pack">
-                     </div>
+               <div class="row">
+                  <div class="col-md-6">
+                     <h1>{{ $about?->title }}</h1>
+                     {!! $about?->description !!}
+                     <button class="app-btn modal-switch-1">{{ Str::upper(__('Leave a request')) }}</button>
                   </div>
-               @endisset
+                  <div class="col-md-6">
+                     <img src="{{ $about?->image }}" alt="Golden Pack">
+                  </div>
+               </div>
             </div>
          </div>
       </section>
@@ -35,7 +31,7 @@
                   <div class="col-md-6">
                      <img src="/assets/img/gradient-tle.svg" alt="Golden Pack">
                      <h4>{{ $about->about_title }}</h4>
-                     <p>{!! $about->about_description !!}</p>
+                     {!! $about->about_description !!}
                   </div>
                </div>
             @endisset
@@ -53,7 +49,7 @@
                         <div class="box">
                            <img src="{{ $process->image }}" alt="{{ $process->title }}">
                            <h4>{{ $process->title }}</h4>
-                           <p>{!! $process->description !!}</p>
+                           {!! $process->description !!}
                         </div>
                      </div>
                   @endforeach
@@ -76,7 +72,7 @@
                                  <img src="/assets/img/equipment.jpg" class="bg" alt="Golden Pack">
                                  <!-- Content -->
                                  <h2>{{ $equipment->title }}</h2>
-                                 <p>{!! $equipment->description !!}</p>
+                                 {!! $equipment->description !!}
                                  <div class="control">
                                     <div>
                                        <div class="swiper-prev-1 m-0"><i class="fal fa-long-arrow-left"></i></div>
@@ -116,7 +112,7 @@
                         <div class="swiper-slide">
                            <img src="{{ $portfolio->image }}" alt="Golden Pack">
                            <h4>{{ $portfolio->title }}</h4>
-                           <p>{!! $portfolio->description !!}</p>
+                           {!! $portfolio->description !!}
                         </div>
                      @endforeach
                   </div>
@@ -135,9 +131,9 @@
                      @foreach($testimonials as $testimonial)
                         <div class="swiper-slide">
                            <img src="{{ $testimonial->image }}" alt="{{ $testimonial->title }}">
-                           <h4>{{ $testimonial->title }}</h4>
-                           <span>Гендиректор</span>
-                           <p>{!! $testimonial->description !!}</p>
+                           <h4>{{ $testimonial->name }}</h4>
+                           <span>{{ $testimonial->title }}</span>
+                           {!! $testimonial->description !!}
                         </div>
                      @endforeach
                   </div>
@@ -161,7 +157,7 @@
                         <div class="box">
                            <img src="{{ $advantage->image }}" alt="{{ $advantage->title }}">
                            <h4>{{ $advantage->title }}</h4>
-                           <p>{{ $advantage->description }}</p>
+                           {{ $advantage->description }}
                         </div>
                      </div>
                   @endforeach
@@ -182,7 +178,7 @@
                   @isset($cooperation->list)
                      @foreach($cooperation->list as $list)
                         <h4>{{ $list['title'] }}</h4>
-                        <p>{!! $list['description'] !!}</p>
+                        {!! $list['description'] !!}
                      @endforeach
                   @endisset
                </div>

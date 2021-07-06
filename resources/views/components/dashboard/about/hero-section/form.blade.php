@@ -8,12 +8,11 @@
               aria-labelledby="{{ $lang }}-tab-justified">
             <div class="col-md-12 col-12">
                <div class="form-label-group">
-                  <input name="title[{{ $lang }}]"
-                         value="{{ old("title.$lang") ?? $content?->title[$lang] ?? '' }}"
-                         type="text"
-                         id="title-{{$loop->iteration}}"
-                         class="form-control @error("title.$lang") is-invalid @enderror"
-                         placeholder="{{ __('Title') . ' ('. $lang . ')' }}">
+                  <textarea name="title[{{ $lang }}]"
+                            type="text"
+                            id="title-{{$loop->iteration}}"
+                            class="form-control @error("title.$lang") is-invalid @enderror"
+                            placeholder="{{ __('Title') . ' ('. $lang . ')' }}">{{ old("title.$lang") ?? $content?->title[$lang] ?? '' }}</textarea>
                   <label
                      for="title-{{$loop->iteration}}">{{ __('Title') . ' ('. $lang . ')' }}</label>
                   @error("title.$lang")
