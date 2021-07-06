@@ -32,6 +32,27 @@
                                     @method('PUT')
                                  @endif
 
+                                 @php
+                                    $currentRoute = Route::currentRouteName();
+                                    $isTestimonialsRoute = $currentRoute === 'testimonials.create' || $currentRoute === 'testimonials.edit';
+                                    $content = $content ?? null;
+                                 @endphp
+                                 @if($isTestimonialsRoute)
+                                    <div class="row">
+                                       <div class="col-6">
+                                          <div class="form-label-group mb-1">
+                                             <input name="name" type="text" id="name"
+                                                    class="form-control @error('name') is-invalid @enderror"
+                                                    placeholder="{{ __('Full name') }}"
+                                                    value="{{ old('name') ?? $content?->name }}">
+                                             <label for="name">{{ __('Full name') }}</label>
+                                             @error('name')
+                                             <p class="text-danger mb-0">{{ $message }}</p>
+                                             @enderror
+                                          </div>
+                                       </div>
+                                    </div>
+                                 @endif
                                  @php $inputs = [
                                      'title',
                                      'description',
@@ -39,7 +60,6 @@
                                  @endphp
                                  <x-dashboard.language-tabs :availableLangs="$availableLangs"
                                                             :inputs="$inputs"/>
-                                 @php $content = $content ?? null; @endphp
                                  <x-dashboard.template-form :availableLangs="$availableLangs" :positions="$positions"
                                                             :content="$content"/>
                               </form>

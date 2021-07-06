@@ -10,8 +10,7 @@ class UpdateTemplateFormRequest extends FormRequest
     {
         $tableName = $this->segment(2);
         $ignoredPosition = $this->input('ignored_position');
-
-        return [
+        $validationRules = [
             'title' => 'required|array|max:3',
             'title.ru' => 'required|min:3|max:255',
             'title.en' => 'required|min:3|max:255',
@@ -26,6 +25,11 @@ class UpdateTemplateFormRequest extends FormRequest
             'ignored_position' => 'required|integer|min:1',
             'image' => 'nullable|image|max:4096'
         ];
+
+        if ($tableName === 'testimonials')
+            $validationRules['name'] = 'required|min:3|max:255';
+
+        return $validationRules;
     }
 
     public function authorize(): bool

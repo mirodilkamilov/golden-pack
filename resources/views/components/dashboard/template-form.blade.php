@@ -1,5 +1,10 @@
 @props(['availableLangs', 'positions', 'content' => null])
 
+@php
+   $currentRoute = Route::currentRouteName();
+   $isTestimonialsRoute = $currentRoute === 'testimonials.create' || $currentRoute === 'testimonials.edit';
+@endphp
+
 <div class="row">
    <div class="tab-content pt-2 col-md-6 col-6 pr-0 pl-0">
       @foreach($availableLangs as $lang)
@@ -13,8 +18,10 @@
                          type="text"
                          id="title-{{$loop->iteration}}"
                          class="form-control @error("title.$lang") is-invalid @enderror"
-                         placeholder="{{ __('Title') . ' ('. $lang . ')' }}">
-                  <label for="title-{{$loop->iteration}}">{{ __('Title') . ' ('. $lang . ')' }}</label>
+                         placeholder="{{ ($isTestimonialsRoute ? __('Title of person') : __('Title')) . ' ('. $lang . ')' }}">
+                  <label
+                     for="title-{{$loop->iteration}}">{{ ($isTestimonialsRoute ? __('Title of person') : __('Title')) . ' ('. $lang . ')' }}
+                  </label>
                   @error("title.$lang")
                   <p class="text-danger">{{ $message }}</p>
                   @enderror
@@ -37,7 +44,9 @@
       @endforeach
    </div>
 
-   <div class="col-lg-6 col-md-6" style="transform: translateY(-50px);">
+   @php $currentRoute = Route::currentRouteName() @endphp
+   <div class="col-lg-6 col-md-6"
+        style="transform: {{ ($currentRoute==='testimonials.create' || $currentRoute==='testimonials.edit')  ? 'translateY(-102px);' : 'translateY(-50px);' }}">
       <div class="form-label-group mb-1">
          <input name="position" type="number" id="position"
                 class="form-control @error('position') is-invalid @enderror"

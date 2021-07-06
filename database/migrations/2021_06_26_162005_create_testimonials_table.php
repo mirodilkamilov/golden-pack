@@ -10,6 +10,7 @@ class CreateTestimonialsTable extends Migration
     {
         Schema::create('testimonials', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
             $table->jsonb('title');
             $table->jsonb('description');
             $table->string('image');

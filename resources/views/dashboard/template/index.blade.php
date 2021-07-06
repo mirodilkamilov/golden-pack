@@ -22,7 +22,7 @@
                      <tr>
                         <th>{{ __('Image') }}</th>
                         <th>{{ __('Position') }}</th>
-                        <th>{{ __('Title') }}</th>
+                        <th>{{ Route::currentRouteName() === 'testimonials.index' ? __('Full name') : __('Title') }}</th>
                         <th>{{ __('Description') }}</th>
                         <th>{{ __('Actions') }}</th>
                      </tr>
@@ -34,7 +34,8 @@
                               <img src="{{ $content->image }}" alt="Img placeholder">
                            </td>
                            <td class="product-category position">{{ $content->position }}</td>
-                           <td class="product-name title">{{ $content->title }}</td>
+                           <td
+                              class="product-name title">{{ Route::currentRouteName() === 'testimonials.index' ? $content->name : $content->title }}</td>
                            <td class="text-center">
                               {!! $content->description !!}
                            </td>
