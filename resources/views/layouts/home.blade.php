@@ -30,7 +30,15 @@
             <li><a href="#cooperation">{{ __('Cooperation') }}</a></li>
             <li><a href="#contacts">{{ __('Contacts') }}</a></li>
          </ul>
-
+         <!-- Languages -->
+         <div class="app-drop">
+            Ru
+            <div>
+               <a href="#" class="active">Русский</a>
+               <a href="#">Узбекский</a>
+               <a href="#">English</a>
+            </div>
+         </div>
       @isset($about->phone)
          <!-- Recall -->
             <div class="callback">

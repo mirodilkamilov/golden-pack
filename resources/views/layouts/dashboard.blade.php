@@ -30,6 +30,7 @@
    <!-- END: Page CSS-->
 
    <link rel="stylesheet" href="/assets/styles/custom.css">
+   <link rel="icon" href="/assets/logo-tab.png" type="image/png">
 
    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
            integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
