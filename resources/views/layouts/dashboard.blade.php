@@ -24,8 +24,6 @@
    <link rel="stylesheet" type="text/css" href="/app-assets/css/core/menu/menu-types/vertical-menu.css">
    <link rel="stylesheet" type="text/css" href="/app-assets/css/core/colors/palette-gradient.css">
 
-   <link rel="stylesheet" type="text/css" href="/app-assets/css/pages/app-todo.css">
-   <link rel="stylesheet" type="text/css" href="/app-assets/css/pages/app-user.css">
    <link rel="stylesheet" type="text/css" href="/app-assets/css/pages/data-list-view.css">
    <!-- END: Page CSS-->
 
@@ -234,11 +232,11 @@
 <!-- BEGIN: Page JS-->
 <script src="/app-assets/js/scripts/ui/data-list-view.js"></script>
 <script src="/app-assets/js/scripts/datatables/datatable.js"></script>
-<script src="/app-assets/js/scripts/pages/app-todo.js"></script>
-<script src="/app-assets/js/scripts/pages/app-user.js"></script>
+{{--<script src="/app-assets/js/scripts/pages/app-todo.js"></script>--}}
+{{--<script src="/app-assets/js/scripts/pages/app-user.js"></script>--}}
 <script src="/app-assets/js/scripts/modal/components-modal.js"></script>
 
-<script src="/app-assets/vendors/js/ui/jquery.sticky.js"></script>
+{{--<script src="/app-assets/vendors/js/ui/jquery.sticky.js"></script>--}}
 <script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
 
 @stack('modal-show')
