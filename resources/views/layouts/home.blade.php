@@ -32,11 +32,12 @@
          </ul>
          <!-- Languages -->
          <div class="app-drop">
-            Ru
+            {{ Str::upper($locale) }}
             <div>
-               <a href="#" class="active">Русский</a>
-               <a href="#">Узбекский</a>
-               <a href="#">English</a>
+               @foreach(config('app.languages') as $lang)
+                  <a href="{{ route('index', $lang) }}"
+                     class="{{ $locale === $lang ? 'active' : '' }}">{{ __($lang) }}</a>
+               @endforeach
             </div>
          </div>
       @isset($about->phone)

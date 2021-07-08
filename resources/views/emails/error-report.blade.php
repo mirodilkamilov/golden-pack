@@ -6,6 +6,7 @@
 <p><strong>Phone:</strong> {{ $validated['phone'] }}</p>
 <p><strong>Email:</strong> {{ $validated['email'] }}</p>
 
+<p><strong>Please, report to USOFT: 90 008 65 74</strong></p>
 <hr>
 
 <h3 style="color: red;">Here is the error details</h3>
