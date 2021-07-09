@@ -124,6 +124,7 @@
                   @enderror
                </div>
             </div>
+            <input type="hidden" name="origin" value="modal">
             <div class="col-12">
                <button class="app-btn mx-auto mt-5">{{ Str::upper(__('Leave a request')) }}</button>
             </div>
@@ -155,8 +156,8 @@
 </script>
 
 <!-- Vendor -->
-<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 {{--<script defer src="/assets/libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>--}}
 <script defer src="/assets/libs/popper-core-master/src/popper.js"></script>
 <script defer src="/assets/libs/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>

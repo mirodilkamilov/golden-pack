@@ -224,6 +224,7 @@
                         @enderror
                      </div>
                   </div>
+                  <input type="hidden" name="origin" value="text-box">
                   <div class="col-12">
                      <button class="app-btn mx-auto mt-5">{{ Str::upper(__('Leave a request')) }}</button>
                   </div>
@@ -325,8 +326,14 @@
       @push('show-modal-form')
          <script>
              $(document).ready(function () {
-                 $('.overlay').toggleClass('active');
+                @if(old('origin') === 'text-box')
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $('.contacts').offset().top
+                }, 100);
+                @else
+                $('.overlay').toggleClass('active');
                  $('.modal-1').toggleClass('active');
+                @endif
              });
          </script>
       @endpush
