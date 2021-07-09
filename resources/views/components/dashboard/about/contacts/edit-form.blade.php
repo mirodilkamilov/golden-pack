@@ -15,8 +15,8 @@
          <div class="list-item-container col-6 mt-0 mb-2">
             <div class="form-label-group list-item mb-0">
                <input name="contacts[phone][]"
-                      value="{{ old("contacts.phone.$loop->iteration") ?? $phone }}"
-                      class="form-control @error("contacts.phone.$loop->iteration") is-invalid @enderror" id="phone"
+                      value="{{ old("contacts.phone.$loop->index") ?? $phone }}"
+                      class="form-control @error("contacts.phone.$loop->index") is-invalid @enderror" id="phone"
                       placeholder="{{ __('Phone') }}" type="text" autofocus>
                <i class="feather icon-plus-circle text-primary pl-1 add-list-item"
                   onclick="addListItem(this)"></i>
@@ -24,7 +24,7 @@
                   onclick="removeListItem(this)"></i>
                <label for="phone">{{ __('Phone') }}</label>
             </div>
-            @error("contacts.phone.$loop->iteration")
+            @error("contacts.phone.$loop->index")
             <p class="text-danger mb-1">{{ $message }}</p>
             @enderror
          </div>
@@ -41,8 +41,8 @@
          <div class="list-item-container col-6 mt-0 mb-1">
             <div class="form-label-group list-item mb-0">
                <input name="contacts[email][]"
-                      value="{{ old("contacts.email.$loop->iteration") ?? $email }}" id="email"
-                      class="form-control @error("contacts.email.$loop->iteration") is-invalid @enderror"
+                      value="{{ old("contacts.email.$loop->index") ?? $email }}" id="email"
+                      class="form-control @error("contacts.email.$loop->index") is-invalid @enderror"
                       placeholder="{{ __('Email') }}" type="email">
                <i class="feather icon-plus-circle text-primary pl-1 add-list-item"
                   onclick="addListItem(this)"></i>
@@ -50,7 +50,7 @@
                   onclick="removeListItem(this)"></i>
                <label for="email">{{ __('Email') }}</label>
             </div>
-            @error("contacts.email.$loop->iteration")
+            @error("contacts.email.$loop->index")
             <p class="text-danger mb-1">{{ $message }}</p>
             @enderror
          </div>
@@ -100,10 +100,10 @@
                       class="form-control @error("contacts.social_media.$i.url") is-invalid @enderror" id="telegram"
                       placeholder="https://t.me/username">
                <input type="hidden" name="contacts[social_media][{{ $i }}][name]" value="telegram">
-               @error("contacts.social_media.$i.url")
-               <p class="text-danger">{{ $message }}</p>
-               @enderror
             </div>
+            @error("contacts.social_media.$i.url")
+            <p class="text-danger">{{ $message }}</p>
+            @enderror
          </div>
          <div class="col-12 pl-0">
             @php ++$i; @endphp
@@ -117,10 +117,10 @@
                       class="form-control @error("contacts.social_media.$i.url") is-invalid @enderror" id="facebook"
                       placeholder="https://www.facebook.com">
                <input type="hidden" name="contacts[social_media][{{ $i }}][name]" value="facebook">
-               @error("contacts.social_media.$i.url")
-               <p class="text-danger">{{ $message }}</p>
-               @enderror
             </div>
+            @error("contacts.social_media.$i.url")
+            <p class="text-danger">{{ $message }}</p>
+            @enderror
 
             @php ++$i; @endphp
             <label for="instagram">Instagram</label>
@@ -133,10 +133,10 @@
                       class="form-control @error("contacts.social_media.$i.url") is-invalid @enderror" id="instagram"
                       placeholder="https://www.instagram.com">
                <input type="hidden" name="contacts[social_media][{{ $i }}][name]" value="instagram">
-               @error("contacts.social_media.$i.url")
-               <p class="text-danger">{{ $message }}</p>
-               @enderror
             </div>
+            @error("contacts.social_media.$i.url")
+            <p class="text-danger">{{ $message }}</p>
+            @enderror
 
             @php ++$i; @endphp
             <label for="linkedin">Linkedin</label>
@@ -149,10 +149,10 @@
                       class="form-control @error("contacts.social_media.$i.url") is-invalid @enderror" id="linkedin"
                       placeholder="https://www.linkedin.com">
                <input type="hidden" name="contacts[social_media][{{ $i }}][name]" value="linkedin">
-               @error("contacts.social_media.$i.url")
-               <p class="text-danger">{{ $message }}</p>
-               @enderror
             </div>
+            @error("contacts.social_media.$i.url")
+            <p class="text-danger">{{ $message }}</p>
+            @enderror
          </div>
       </div>
    </div>

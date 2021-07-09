@@ -92,10 +92,10 @@
                    class="form-control @error("contacts.social_media.$i.url") is-invalid @enderror" id="telegram"
                    placeholder="https://t.me/username">
             <input type="hidden" name="contacts[social_media][{{ $i }}][name]" value="telegram">
-            @error("contacts.social_media.$i.url")
-            <p class="text-danger">{{ $message }}</p>
-            @enderror
          </div>
+         @error("contacts.social_media.$i.url")
+         <p class="text-danger">{{ $message }}</p>
+         @enderror
       </div>
    </div>
 
@@ -126,10 +126,10 @@
                    class="form-control @error("contacts.social_media.$i.url") is-invalid @enderror" id="facebook"
                    placeholder="https://www.facebook.com">
             <input type="hidden" name="contacts[social_media][{{ $i }}][name]" value="facebook">
-            @error("contacts.social_media.$i.url")
-            <p class="text-danger">{{ $message }}</p>
-            @enderror
          </div>
+         @error("contacts.social_media.$i.url")
+         <p class="text-danger">{{ $message }}</p>
+         @enderror
 
          @php ++$i; @endphp
          <label for="instagram">Instagram</label>
@@ -142,10 +142,10 @@
                    class="form-control @error("contacts.social_media.$i.url") is-invalid @enderror" id="instagram"
                    placeholder="https://www.instagram.com">
             <input type="hidden" name="contacts[social_media][{{ $i }}][name]" value="instagram">
-            @error("contacts.social_media.$i.url")
-            <p class="text-danger">{{ $message }}</p>
-            @enderror
          </div>
+         @error("contacts.social_media.$i.url")
+         <p class="text-danger">{{ $message }}</p>
+         @enderror
 
          @php ++$i; @endphp
          <label for="linkedin">Linkedin</label>
@@ -158,10 +158,10 @@
                    class="form-control @error("contacts.social_media.$i.url") is-invalid @enderror" id="linkedin"
                    placeholder="https://www.linkedin.com">
             <input type="hidden" name="contacts[social_media][{{ $i }}][name]" value="linkedin">
-            @error("contacts.social_media.$i.url")
-            <p class="text-danger">{{ $message }}</p>
-            @enderror
          </div>
+         @error("contacts.social_media.$i.url")
+         <p class="text-danger">{{ $message }}</p>
+         @enderror
       </div>
    </div>
 
