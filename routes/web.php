@@ -43,7 +43,7 @@ Route::group([
 
 Route::group([
     'prefix' => 'dashboard',
-    'middleware' => ['auth', 'dashboard.setLocale'],
+    'middleware' => 'auth',
 ], function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 

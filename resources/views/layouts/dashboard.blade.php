@@ -55,7 +55,7 @@
                </ul>
             </div>
             <ul class="nav navbar-nav float-right">
-               <x-dashboard.language-dropdown :availableLangs="$availableLangs" :locale="$locale"/>
+{{--               <x-dashboard.language-dropdown :availableLangs="$availableLangs" :locale="$locale"/>--}}
 
                <li class="nav-item d-none d-lg-block">
                   <a class="nav-link nav-link-expand">
