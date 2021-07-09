@@ -32,7 +32,7 @@ class PortfolioController extends Controller
             return redirect()->route('portfolios.index');
         }
 
-        $request->session()->flash('success', 'Portfolio was successfully saved!');
+        $request->session()->flash('success', 'Successfully saved!');
         return redirect()->route('portfolios.index');
     }
 
@@ -55,7 +55,7 @@ class PortfolioController extends Controller
             return redirect()->route('portfolios.index');
         }
 
-        $request->session()->flash('success', 'Portfolio was successfully updated!');
+        $request->session()->flash('success', 'Successfully updated!');
         return redirect()->route('portfolios.index');
     }
 
@@ -63,7 +63,7 @@ class PortfolioController extends Controller
     {
         $portfolio->delete();
 
-        session()->flash('success', 'Portfolio was successfully deleted!');
+        session()->flash('success', 'Successfully deleted!');
         return redirect()->route('portfolios.index');
     }
 }

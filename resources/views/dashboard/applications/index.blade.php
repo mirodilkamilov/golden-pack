@@ -34,14 +34,6 @@
                            </tr>
                         @endforeach
                         </tbody>
-                        <tfoot class="thead-dark">
-                        <tr>
-                           <th rowspan="1" colspan="1">{{ __('Full name') }}</th>
-                           <th rowspan="1" colspan="1">{{ __('Phone') }}</th>
-                           <th rowspan="1" colspan="1">{{ __('Email') }}</th>
-                           <th rowspan="1" colspan="1">{{ __('Received date') }}</th>
-                        </tr>
-                        </tfoot>
                      </table>
                      {{ $applications->links() }}
                   </div>

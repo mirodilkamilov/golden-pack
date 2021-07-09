@@ -26,7 +26,7 @@ class ContactsController extends Controller
             return redirect()->route('contacts.index');
         }
 
-        $request->session()->flash('success', 'Contacts was successfully saved!');
+        $request->session()->flash('success', 'Successfully saved!');
         return redirect()->route('contacts.index');
     }
 
@@ -40,7 +40,7 @@ class ContactsController extends Controller
             return redirect()->route('contacts.index');
         }
 
-        $request->session()->flash('success', 'Contacts was successfully updated!');
+        $request->session()->flash('success', 'Successfully updated!');
         return redirect()->route('contacts.index');
     }
 }

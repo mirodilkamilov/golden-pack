@@ -32,7 +32,7 @@ class ProcessController extends Controller
             return redirect()->route('processes.index');
         }
 
-        $request->session()->flash('success', 'Process was successfully saved!');
+        $request->session()->flash('success', 'Successfully saved!');
         return redirect()->route('processes.index');
     }
 
@@ -55,7 +55,7 @@ class ProcessController extends Controller
             return redirect()->route('processes.index');
         }
 
-        $request->session()->flash('success', 'Process was successfully updated!');
+        $request->session()->flash('success', 'Successfully updated!');
         return redirect()->route('processes.index');
     }
 
@@ -63,7 +63,7 @@ class ProcessController extends Controller
     {
         $process->delete();
 
-        session()->flash('success', 'Process was successfully deleted!');
+        session()->flash('success', 'Successfully deleted!');
         return redirect()->route('processes.index');
     }
 }

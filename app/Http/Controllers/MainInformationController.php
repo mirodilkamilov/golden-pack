@@ -27,7 +27,7 @@ class MainInformationController extends Controller
             return redirect()->route('main-information.index');
         }
 
-        $request->session()->flash('success', 'About us section was successfully saved!');
+        $request->session()->flash('success', 'Successfully saved!');
         return redirect()->route('main-information.index');
     }
 
@@ -41,7 +41,7 @@ class MainInformationController extends Controller
             return redirect()->route('main-information.index');
         }
 
-        $request->session()->flash('success', 'About us section was successfully updated!');
+        $request->session()->flash('success', 'Successfully updated!');
         return redirect()->route('main-information.index');
     }
 }

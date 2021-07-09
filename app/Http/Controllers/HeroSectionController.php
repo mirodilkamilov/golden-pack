@@ -27,7 +27,7 @@ class HeroSectionController extends Controller
             return redirect()->route('hero-section.index');
         }
 
-        $request->session()->flash('success', 'Hero section was successfully saved!');
+        $request->session()->flash('success', 'Successfully saved!');
         return redirect()->route('hero-section.index');
     }
 
@@ -41,7 +41,7 @@ class HeroSectionController extends Controller
             return redirect()->route('hero-section.index');
         }
 
-        $request->session()->flash('success', 'Hero section was successfully updated!');
+        $request->session()->flash('success', 'Successfully updated!');
         return redirect()->route('hero-section.index');
     }
 }
