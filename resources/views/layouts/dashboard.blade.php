@@ -232,11 +232,8 @@
 <!-- BEGIN: Page JS-->
 <script src="/app-assets/js/scripts/ui/data-list-view.js"></script>
 <script src="/app-assets/js/scripts/datatables/datatable.js"></script>
-{{--<script src="/app-assets/js/scripts/pages/app-todo.js"></script>--}}
-{{--<script src="/app-assets/js/scripts/pages/app-user.js"></script>--}}
 <script src="/app-assets/js/scripts/modal/components-modal.js"></script>
 
-{{--<script src="/app-assets/vendors/js/ui/jquery.sticky.js"></script>--}}
 <script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
 
 @stack('modal-show')

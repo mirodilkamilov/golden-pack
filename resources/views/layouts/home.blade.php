@@ -171,5 +171,11 @@
 @stack('show-modal-form')
 @stack('show-modal-message')
 
+<noindex>
+   <link rel="stylesheet" href="//recall.uz/widget/tracker.css">
+   <script type="text/javascript" src="//recall.uz/php/1.js" charset="UTF-8"></script>
+   <script type="text/javascript">var uid_code = '7181';</script>
+</noindex>
+
 </body>
 </html>

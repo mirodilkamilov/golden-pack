@@ -32,9 +32,9 @@
                   <textarea name="description[{{ $lang }}]"
                             class="form-control @error("description.$lang") is-invalid @enderror"
                             id="description-{{ $lang }}"
-                            placeholder="{{ __('Description') }} ({{ $lang }})"
+                            placeholder="{{ __('Comment') }} ({{ $lang }})"
                             spellcheck="false">{{ old("description.$lang") ?? $content?->description[$lang] }}</textarea>
-                  <label for="description-{{ $lang }}">{{ __('Description') }} ({{ $lang }})</label>
+                  <label for="description-{{ $lang }}">{{ __('Comment') }} ({{ $lang }})</label>
                   @error("description.$lang")
                   <p class="text-danger">{{ $message }}</p>
                   @enderror
