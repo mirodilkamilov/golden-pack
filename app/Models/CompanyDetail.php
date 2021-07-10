@@ -18,6 +18,7 @@ class CompanyDetail extends Model
         'about_description' => 'array',
         'phone' => 'array',
         'email' => 'array',
+        'address' => 'array',
         'social_media' => 'array'
     ];
 
