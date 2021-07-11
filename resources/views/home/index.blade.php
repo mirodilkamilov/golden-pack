@@ -45,7 +45,7 @@
             <div class="row">
                @isset($processes)
                   @foreach($processes as $process)
-                     <div class="col-lg-3 col-md-6">
+                     <div class="col-lg-3 col-md-6" style="display: flex;">
                         <div class="box">
                            <img src="{{ $process->image }}" alt="{{ $process->title }}">
                            <h4>{{ $process->title }}</h4>
@@ -214,7 +214,7 @@
                         @enderror
                      </div>
                   </div>
-                  <div class="col-md-4 mb-0">
+                  <div class="col-md-4 mb-0 pb-0">
                      <div class="form-label-group">
                         <input name="email" value="{{ old('email') }}" type="text" id="email" class="form-control"
                                placeholder="{{ __('Email') }}">
@@ -329,7 +329,7 @@
                 @if(old('origin') === 'text-box')
                 $([document.documentElement, document.body]).animate({
                     scrollTop: $('.contacts').offset().top
-                }, 100);
+                }, 300);
                 @else
                 $('.overlay').toggleClass('active');
                  $('.modal-1').toggleClass('active');

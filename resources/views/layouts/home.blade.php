@@ -96,9 +96,9 @@
          <div class="row">
             <div class="col-12">
                <div class="form-label-group">
-                  <input name="name" value="{{ old('name') }}" type="text" id="name" class="form-control"
+                  <input name="name" value="{{ old('name') }}" type="text" id="name-modal" class="form-control"
                          placeholder="{{ __('Your name') }}">
-                  <label for="name">{{ __('Your name') }}</label>
+                  <label for="name-modal">{{ __('Your name') }}</label>
                   @error('name')
                   <p class="text-danger">{{ $message }}</p>
                   @enderror
@@ -106,9 +106,10 @@
             </div>
             <div class="col-12">
                <div class="form-label-group">
-                  <input name="phone" value="{{ old('phone') ?? '+998 ' }}" type="text" id="phone" class="form-control"
+                  <input name="phone" value="{{ old('phone') ?? '+998 ' }}" type="text" id="phone-modal"
+                         class="form-control"
                          placeholder="{{ __('Phone') }}">
-                  <label for="phone">{{ __('Phone') }}</label>
+                  <label for="phone-modal">{{ __('Phone') }}</label>
                   @error('phone')
                   <p class="text-danger">{{ $message }}</p>
                   @enderror
@@ -116,9 +117,9 @@
             </div>
             <div class="col-12 mb-0">
                <div class="form-label-group">
-                  <input name="email" value="{{ old('email') }}" type="text" id="email" class="form-control"
+                  <input name="email" value="{{ old('email') }}" type="text" id="email-modal" class="form-control"
                          placeholder="{{ __('Email') }}">
-                  <label for="email">{{ __('Email') }}</label>
+                  <label for="email-modal">{{ __('Email') }}</label>
                   @error('email')
                   <p class="text-danger">{{ $message }}</p>
                   @enderror
@@ -155,6 +156,12 @@
     document.getElementById('year').innerHTML = new Date().getFullYear();
 </script>
 
+<noindex>
+   <link rel="stylesheet" href="//recall.uz/widget/tracker.css">
+   <script defer type="text/javascript" src="//recall.uz/php/1.js" charset="UTF-8"></script>
+   <script defer type="text/javascript">var uid_code = '7181';</script>
+</noindex>
+
 <!-- Vendor -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -170,12 +177,6 @@
 
 @stack('show-modal-form')
 @stack('show-modal-message')
-
-<noindex>
-   <link rel="stylesheet" href="//recall.uz/widget/tracker.css">
-   <script type="text/javascript" src="//recall.uz/php/1.js" charset="UTF-8"></script>
-   <script type="text/javascript">var uid_code = '7181';</script>
-</noindex>
 
 </body>
 </html>

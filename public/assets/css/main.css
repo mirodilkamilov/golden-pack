@@ -410,9 +410,25 @@ template {
     margin-right: auto;
     border-radius: 28px;
     outline: 0 !important;
-    border: 3px solid #7629936b;
+    border: 0;
+    transition: all .1s ease;
     color: #fff;
     background-image: linear-gradient(180deg, #fba345 0%, #cf5701 100%);
+}
+
+.app-btn::before {
+    position: absolute;
+    content: '';
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    top: -4px;
+    left: -4px;
+    border-radius: 32px;
+    border: 4px solid #7629937d !important;
+}
+
+.app-btn:active {
+    transform: scale(0.8);
 }
 
 @media only screen and (max-width: 559px) {
@@ -440,7 +456,7 @@ template {
 
 .procces .col-md-6 .box {
     width: 100%;
-    height: auto;
+    height: 100%;
     padding: 20px;
     transition: box-shadow .4s ease;
     box-shadow: 0px 15px 30px #05080908;
@@ -740,6 +756,7 @@ main .equipment img.bg {
 
 main .equipment div.main {
     padding: 80px 0;
+    padding-right: 50px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -1333,6 +1350,11 @@ header.scrolled nav {
         height: 300px;
     }
 
+    .swiper-1 .img-box img {
+        -o-object-position: center center;
+        object-position: center center;
+    }
+
     .swiper-1 .control {
         align-items: center;
     }
@@ -1360,6 +1382,7 @@ header.scrolled nav {
 }
 
 .swiper-2 h4 {
+    text-align: center;
     font-weight: bold;
     font-size: 2em;
     margin-bottom: 10px;
@@ -1499,6 +1522,12 @@ header.scrolled nav {
 
 
 /* ? Custom css add */
+@media all and (max-width: 768px) {
+    .contacts .col-md-4 {
+        padding-bottom: 30px;
+    }
+}
+
 .app-form .col-12 {
     margin-bottom: 2rem;
 }

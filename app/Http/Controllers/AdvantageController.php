@@ -55,7 +55,7 @@ class AdvantageController extends Controller
             return redirect()->route('advantages.index');
         }
 
-        $request->session()->flash('success', 'Successfully updated');
+        $request->session()->flash('success', 'Successfully updated!');
         return redirect()->route('advantages.index');
     }
 
