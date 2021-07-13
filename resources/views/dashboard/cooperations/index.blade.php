@@ -18,7 +18,7 @@
                      <div class="card">
                         <div class="card-header justify-content-center">
                            <h4
-                              class="card-title">{{ isset($content) ? __('Edit') : __('Create') }} {{ __(Str::title($currentRoute)) }}</h4>
+                              class="card-title">{{ isset($content) ? __('Edit') : __('Create') }}</h4>
                         </div>
                         <div class="card-content">
                            <div class="card-body pb-0">

@@ -32,7 +32,7 @@ class AdvantageController extends Controller
             return redirect()->route('advantages.index');
         }
 
-        $request->session()->flash('success', 'Advantage was successfully saved!');
+        $request->session()->flash('success', 'Successfully saved!');
         return redirect()->route('advantages.index');
     }
 
@@ -55,7 +55,7 @@ class AdvantageController extends Controller
             return redirect()->route('advantages.index');
         }
 
-        $request->session()->flash('success', 'Advantage was successfully updated!');
+        $request->session()->flash('success', 'Successfully updated!');
         return redirect()->route('advantages.index');
     }
 
@@ -63,7 +63,7 @@ class AdvantageController extends Controller
     {
         $advantage->delete();
 
-        session()->flash('success', 'Advantage was successfully deleted!');
+        session()->flash('success', 'Successfully deleted!');
         return redirect()->route('advantages.index');
     }
 }

@@ -11,18 +11,21 @@
 
          <x-dashboard.alerts/>
 
+         @php
+            $isTestimonialsRoute = Route::currentRouteName() === 'testimonials.index';
+         @endphp
          <div class="content-body">
             <section id="data-thumb-view" class="data-thumb-view-header">
                <div class="table-responsive">
                   <a href="{{ route($currentRoute.'.create') }}" class="btn btn-outline-primary" tabindex="0">
-                     <span><i class="feather icon-plus"></i> {{ __('Add New') }}</span>
+                     <span><i class="feather icon-plus"></i> {{ __('Add') }}</span>
                   </a>
-                  <table class="table data-thumb-view">
+                  <table class="table data-thumb-view" id="custom-thumb-view">
                      <thead>
                      <tr>
                         <th>{{ __('Image') }}</th>
                         <th>{{ __('Position') }}</th>
-                        <th>{{ Route::currentRouteName() === 'testimonials.index' ? __('Full name') : __('Title') }}</th>
+                        <th>{{ $isTestimonialsRoute ? __('From whom') : __('Title') }}</th>
                         <th>{{ __('Description') }}</th>
                         <th>{{ __('Actions') }}</th>
                      </tr>
@@ -77,13 +80,12 @@
               var modalBody = modal.find('.modal-body');
               modalBody.empty().append('<h4 class="modal-title text-danger">' + title + '<h4/>');
               modalBody.append('<img class="preview" src="' + image + '" width="200px" />');
-              modalBody.append('<p class="mt-1 mb-0">Position: ' + position + '</p>');
+              modalBody.append('<p class="mt-1 mb-0">Позиция: ' + position + '</p>');
 
               var form = modal.find('form');
               var action = currentUrl + '/' + id;
               form.attr('action', action);
           });
-
       </script>
    @endpush
 @endsection

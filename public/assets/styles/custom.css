@@ -1,4 +1,4 @@
-.table-responsive .dataTables_wrapper#DataTables_Table_0_wrapper .dt-buttons {
+.table-responsive .dataTables_wrapper .dt-buttons {
     display: none;
 }
 
@@ -29,8 +29,8 @@
 
 .remove-content-container .remove-content {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 8px;
+    top: 9px;
 }
 
 .content-body .card-footer {

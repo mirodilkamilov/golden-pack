@@ -67,39 +67,6 @@
    </div>
 
    <div class="row">
-      <div class="col-6">
-         <div class="form-label-group">
-            <textarea name="contacts[address]" id="address"
-                      class="form-control @error('contacts.address') is-invalid @enderror"
-                      placeholder="{{ __('Address') }}"
-                      type="text">{{ old('contacts.address') }}</textarea>
-            <label for="address">{{ __('Address') }}</label>
-            @error('contacts.address')
-            <p class="text-danger pt-1 mb-0">{{ $message }}</p>
-            @enderror
-         </div>
-      </div>
-
-      @php $i = 0; @endphp
-      <div class="col-6">
-         <label for="telegram">Telegram</label>
-         <div class="input-group mb-75">
-            <div class="input-group-prepend">
-               <span class="input-group-text fa fa-telegram"></span>
-            </div>
-            <input name="contacts[social_media][{{ $i }}][url]" type="text"
-                   value="{{ old("contacts.social_media.$i.url") }}"
-                   class="form-control @error("contacts.social_media.$i.url") is-invalid @enderror" id="telegram"
-                   placeholder="https://t.me/username">
-            <input type="hidden" name="contacts[social_media][{{ $i }}][name]" value="telegram">
-         </div>
-         @error("contacts.social_media.$i.url")
-         <p class="text-danger">{{ $message }}</p>
-         @enderror
-      </div>
-   </div>
-
-   <div class="row">
       <div class="col-6 mt-1">
          <fieldset class="form-label-group">
             <textarea name="contacts[google_map]"
@@ -114,7 +81,23 @@
          </fieldset>
       </div>
 
-      <div class="col-6" style="transform: translateY(-16px);">
+      @php $i = 0; @endphp
+      <div class="col-6" style="z-index: 10;">
+         <label for="telegram">Telegram</label>
+         <div class="input-group mb-75">
+            <div class="input-group-prepend">
+               <span class="input-group-text fa fa-telegram"></span>
+            </div>
+            <input name="contacts[social_media][{{ $i }}][url]" type="text"
+                   value="{{ old("contacts.social_media.$i.url") }}"
+                   class="form-control @error("contacts.social_media.$i.url") is-invalid @enderror" id="telegram"
+                   placeholder="https://t.me/username">
+            <input type="hidden" name="contacts[social_media][{{ $i }}][name]" value="telegram">
+         </div>
+         @error("contacts.social_media.$i.url")
+         <p class="text-danger">{{ $message }}</p>
+         @enderror
+
          @php ++$i; @endphp
          <label for="facebook">Facebook</label>
          <div class="input-group mb-75">
@@ -165,8 +148,38 @@
       </div>
    </div>
 
+   @php
+      $inputs = ['contacts.address'];
+      $availableLangs = config('app.languages');
+   @endphp
+   <div class="address-container" style="transform: translateY(-40px)">
+      <x-dashboard.language-tabs :inputs="$inputs" :availableLangs="$availableLangs"/>
+      <div class="row">
+         <div class="tab-content pt-2 col-md-6 col-6 pr-0 pl-0">
+            @foreach($availableLangs as $lang)
+               <div class="tab-pane @if($loop->first) active @endif tab-pane-{{$lang}}" id="{{ $lang }}-just"
+                    role="tabpanel" aria-labelledby="{{ $lang }}-tab-justified">
+                  <div class="col-md-12 col-12">
+                     <div class="form-label-group">
+                     <textarea name="contacts[address][{{ $lang }}]" id="address-{{ $lang }}"
+                               class="form-control @error('contacts.address') is-invalid @enderror" rows="4"
+                               placeholder="{{ __('Address') . " ($lang)" }}"
+                               type="text">{{ old("contacts.address.$lang") }}</textarea>
+                        <label for="address-{{ $lang }}">{{ __('Address') . " ($lang)" }}</label>
+                        @error("contacts.address.$lang")
+                        <p class="text-danger pt-1 mb-0">{{ $message }}</p>
+                        @enderror
+                     </div>
+                  </div>
+               </div>
+            @endforeach
+         </div>
+      </div>
+   </div>
+
    <div class="row">
-      <div class="col-12" style="display: flex; justify-content: flex-end;">
+      <div class="col-12"
+           style="display: flex; justify-content: flex-end; position: absolute; bottom: 0px; right: 7px;">
          <button type="submit" class="btn btn-primary mr-1 mb-1">{{ __('Save') }}</button>
          <button type="reset" class="btn btn-outline-warning mb-1">{{ __('Reset') }}</button>
       </div>

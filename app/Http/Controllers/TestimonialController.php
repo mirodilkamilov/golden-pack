@@ -32,7 +32,7 @@ class TestimonialController extends Controller
             return redirect()->route('testimonials.index');
         }
 
-        $request->session()->flash('success', 'Testimonial was successfully saved!');
+        $request->session()->flash('success', 'Successfully saved!');
         return redirect()->route('testimonials.index');
     }
 
@@ -55,7 +55,7 @@ class TestimonialController extends Controller
             return redirect()->route('testimonials.index');
         }
 
-        $request->session()->flash('success', 'Testimonial was successfully updated!');
+        $request->session()->flash('success', 'Successfully updated!');
         return redirect()->route('testimonials.index');
     }
 
@@ -63,7 +63,7 @@ class TestimonialController extends Controller
     {
         $testimonial->delete();
 
-        session()->flash('success', 'Testimonial was successfully deleted!');
+        session()->flash('success', 'Successfully deleted!');
         return redirect()->route('testimonials.index');
     }
 }

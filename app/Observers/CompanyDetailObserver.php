@@ -26,5 +26,9 @@ class CompanyDetailObserver
             $companyDetail->about_title = $companyDetail->about_title[$this->locale] ?? $companyDetail->about_title[$this->defaultLang];
             $companyDetail->about_description = $companyDetail->about_description[$this->locale] ?? $companyDetail->about_description[$this->defaultLang];
         }
+
+        if (isset($companyDetail->address)) {
+            $companyDetail->address = $companyDetail->address[$this->locale] ?? $companyDetail->address[$this->defaultLang];
+        }
     }
 }

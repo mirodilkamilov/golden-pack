@@ -27,7 +27,7 @@ class CooperationController extends Controller
             return redirect()->route('cooperation.index');
         }
 
-        $request->session()->flash('success', 'Cooperation was successfully saved!');
+        $request->session()->flash('success', 'Successfully saved!');
         return redirect()->route('cooperation.index');
     }
 
@@ -40,7 +40,7 @@ class CooperationController extends Controller
             return redirect()->route('cooperation.index');
         }
 
-        $request->session()->flash('success', 'Cooperation was successfully saved!');
+        $request->session()->flash('success', 'Successfully updated!');
         return redirect()->route('cooperation.index');
     }
 }

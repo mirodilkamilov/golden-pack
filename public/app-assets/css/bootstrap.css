@@ -3794,7 +3794,7 @@ input[type='submit'].btn-block, input[type='reset'].btn-block, input[type='butto
   background-color : #F5F5F1;
 }
 .custom-file-input:lang(en) ~ .custom-file-label::after {
-  content : 'Browse';
+  content : 'Выбрать';
 }
 .custom-file-input ~ .custom-file-label[data-browse]::after {
   content : attr(data-browse);
@@ -3826,7 +3826,7 @@ input[type='submit'].btn-block, input[type='reset'].btn-block, input[type='butto
   padding : 0.7rem 0.7rem;
   line-height : 1.5rem;
   color : #4E5154;
-  content : 'Browse';
+  content : 'Выбрать';
   background-color : #EDEDED;
   border-left : inherit;
   border-radius : 0 5px 5px 0;

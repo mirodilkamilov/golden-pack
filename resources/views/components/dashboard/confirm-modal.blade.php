@@ -22,7 +22,7 @@
                     @csrf
                     <button class="btn btn-danger mr-1 waves-effect waves-light"
                             type="submit">
-                        {{ __('Yes, delete it!') }}
+                        {{ __('Delete') }}
                     </button>
                     <button type="button" class="btn btn-outline-primary" data-dismiss="modal"
                             aria-label="Close">

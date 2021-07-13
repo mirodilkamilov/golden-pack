@@ -32,7 +32,7 @@ class EquipmentController extends Controller
             return redirect()->route('equipment.index');
         }
 
-        $request->session()->flash('success', 'Equipment was successfully saved!');
+        $request->session()->flash('success', 'Successfully saved!');
         return redirect()->route('equipment.index');
     }
 
@@ -55,7 +55,7 @@ class EquipmentController extends Controller
             return redirect()->route('equipment.index');
         }
 
-        $request->session()->flash('success', 'Equipment was successfully updated!');
+        $request->session()->flash('success', 'Successfully updated!');
         return redirect()->route('equipment.index');
     }
 
@@ -63,7 +63,7 @@ class EquipmentController extends Controller
     {
         $equipment->delete();
 
-        session()->flash('success', 'Equipment was successfully deleted!');
+        session()->flash('success', 'Successfully deleted!');
         return redirect()->route('equipment.index');
     }
 }

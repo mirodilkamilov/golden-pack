@@ -45,7 +45,7 @@
             <div class="row">
                @isset($processes)
                   @foreach($processes as $process)
-                     <div class="col-lg-3 col-md-6">
+                     <div class="col-lg-3 col-md-6" style="display: flex;">
                         <div class="box">
                            <img src="{{ $process->image }}" alt="{{ $process->title }}">
                            <h4>{{ $process->title }}</h4>
@@ -208,13 +208,13 @@
                         <input name="phone" value="{{ old('phone') ?? '+998 ' }}" type="text" id="phone"
                                class="form-control"
                                placeholder="{{ __('Phone') }}">
-                        <label for="phone">{{ __('Phone') }}</label>
+{{--                        <label for="phone">{{ __('Phone') }}</label>--}}
                         @error('phone')
                         <p class="text-danger">{{ $message }}</p>
                         @enderror
                      </div>
                   </div>
-                  <div class="col-md-4 mb-0">
+                  <div class="col-md-4 mb-0 pb-0">
                      <div class="form-label-group">
                         <input name="email" value="{{ old('email') }}" type="text" id="email" class="form-control"
                                placeholder="{{ __('Email') }}">
@@ -224,6 +224,7 @@
                         @enderror
                      </div>
                   </div>
+                  <input type="hidden" name="origin" value="text-box">
                   <div class="col-12">
                      <button class="app-btn mx-auto mt-5">{{ Str::upper(__('Leave a request')) }}</button>
                   </div>
@@ -325,8 +326,14 @@
       @push('show-modal-form')
          <script>
              $(document).ready(function () {
-                 $('.overlay').toggleClass('active');
+                @if(old('origin') === 'text-box')
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $('.contacts').offset().top
+                }, 300);
+                @else
+                $('.overlay').toggleClass('active');
                  $('.modal-1').toggleClass('active');
+                @endif
              });
          </script>
       @endpush

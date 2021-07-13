@@ -236,6 +236,9 @@ return [
         'contacts.phone.*' => 'номер телефона',
         'contacts.email.*' => 'электронная почта',
         'contacts.address' => 'адрес',
+        'contacts.address.ru' => 'адрес (ru)',
+        'contacts.address.en' => 'адрес (en)',
+        'contacts.address.uz' => 'адрес (uz)',
         'contacts.google_map' => 'google map',
         'social_media.*.url' => 'URL-адрес социальной сети'
     ],

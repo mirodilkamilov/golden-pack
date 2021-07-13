@@ -20,7 +20,7 @@
                      <div class="card">
                         <div class="card-header justify-content-center">
                            <h4 class="card-title">
-                              {{ isset($content) ? __('Edit') : __('Create') }} {{ __(Str::title($currentRoute)) }}
+                              {{ isset($content) ? __('Edit') : __('Create') }} {{ __($currentRoute) }}
                            </h4>
                         </div>
                         <div class="card-content">
@@ -43,9 +43,9 @@
                                           <div class="form-label-group mb-1">
                                              <input name="name" type="text" id="name"
                                                     class="form-control @error('name') is-invalid @enderror"
-                                                    placeholder="{{ __('Full name') }}"
+                                                    placeholder="{{ __('From whom') }}"
                                                     value="{{ old('name') ?? $content?->name }}">
-                                             <label for="name">{{ __('Full name') }}</label>
+                                             <label for="name">{{ __('From whom') }}</label>
                                              @error('name')
                                              <p class="text-danger mb-0">{{ $message }}</p>
                                              @enderror
