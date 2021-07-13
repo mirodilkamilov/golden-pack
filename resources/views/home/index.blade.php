@@ -208,7 +208,7 @@
                         <input name="phone" value="{{ old('phone') ?? '+998 ' }}" type="text" id="phone"
                                class="form-control"
                                placeholder="{{ __('Phone') }}">
-                        <label for="phone">{{ __('Phone') }}</label>
+{{--                        <label for="phone">{{ __('Phone') }}</label>--}}
                         @error('phone')
                         <p class="text-danger">{{ $message }}</p>
                         @enderror

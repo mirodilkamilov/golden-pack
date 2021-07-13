@@ -424,7 +424,7 @@ template {
     top: -4px;
     left: -4px;
     border-radius: 32px;
-    border: 4px solid #7629937d !important;
+    border: 4px solid #ff850054 !important;
 }
 
 .app-btn:active {
@@ -1579,6 +1579,10 @@ header.scrolled nav {
     margin-top: 0.3rem;
     font-size: 0.7rem;
     margin-bottom: 0;
+}
+
+.modal-2 .app-btn::before {
+    border: 0 !important;
 }
 
 /*# sourceMappingURL=maps/main.css.map */
