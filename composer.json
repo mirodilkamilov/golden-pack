@@ -12,7 +12,8 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
-        "watson/active": "^6.0"
+        "watson/active": "^6.0",
+        "irazasyed/telegram-bot-sdk": "^v3.4.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",

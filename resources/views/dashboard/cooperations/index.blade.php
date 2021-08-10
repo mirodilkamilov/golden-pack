@@ -129,35 +129,35 @@
 
               for (let lang of avilableLangs) {
                   var navItem = `<li class="nav-item">
-                                                    <a class="nav-link text-uppercase ` + (lang === 'ru' ? 'active ' : '') + lang + `-tab-justified" onclick="changeLangTabs(this)"
-                                                       data-toggle="tab" href="#` + lang + `-just" role="tab" aria-controls="` + lang + `-just"
-                                                       aria-selected="true">
-                                                       ` + lang + `
-                                                    </a>
-                                                 </li>`;
+                      <a class="nav-link text-uppercase ` + (lang === 'ru' ? 'active ' : '') + lang + `-tab-justified" onclick="changeLangTabs(this)"
+                         data-toggle="tab" href="#` + lang + `-just" role="tab" aria-controls="` + lang + `-just"
+                         aria-selected="true">
+                         ` + lang + `
+                      </a>
+                   </li>`;
                   tabComponent += navItem;
               }
               tabComponent += `</ul>`;
               formTemplate += tabComponent;
 
               var tabContent = `<div class="remove-content-container">
-                                                   <i class="feather icon-trash-2 text-danger pr-1 remove-content" onclick="removeTextForm(this)"></i>
-                                                </div>
-                                             <div class="tab-content col-12 p-0 pt-2">`;
+                     <i class="feather icon-trash-2 text-danger pr-1 remove-content" onclick="removeTextForm(this)"></i>
+                  </div>
+               <div class="tab-content col-12 p-0 pt-2">`;
 
               for (let lang of avilableLangs) {
                   var tabPane = `<div class="tab-pane  tab-pane-` + lang + ' ' + (lang === 'ru' ? 'active ' : '') + `" id="` + lang + `-just" role="tabpanel" aria-labelledby="` + lang + `-tab-justified">
-                                                   <div class="form-label-group">
-                                                      <input name="list[` + i + `][` + lang + `][title]" value="" type="text" id="title-` + i + `-` + lang + `" class="form-control " placeholder="Заголовок (` + lang + `)">
-                                                      <label for="title-` + i + `-` + lang + `">Заголовок (` + lang + `)</label>
-                                                   </div>
-                                                   <fieldset class="form-label-group">
-                                                      <textarea name="list[` + i + `][` + lang + `][description]" class="form-control " id="description-` + i + `-` + lang + `" placeholder="Описание (` + lang + `)" spellcheck="false"></textarea>
-                                                      <label for="description-` + i + `-` + lang + `">
-                                                         Описание (` + lang + `)
-                                                      </label>
-                                                   </fieldset>
-                                                </div>`;
+                     <div class="form-label-group">
+                        <input name="list[` + i + `][` + lang + `][title]" value="" type="text" id="title-` + i + `-` + lang + `" class="form-control " placeholder="Заголовок (` + lang + `)">
+                        <label for="title-` + i + `-` + lang + `">Заголовок (` + lang + `)</label>
+                     </div>
+                     <fieldset class="form-label-group">
+                        <textarea name="list[` + i + `][` + lang + `][description]" class="form-control " id="description-` + i + `-` + lang + `" placeholder="Описание (` + lang + `)" spellcheck="false"></textarea>
+                        <label for="description-` + i + `-` + lang + `">
+                           Описание (` + lang + `)
+                        </label>
+                     </fieldset>
+                  </div>`;
                   tabContent += tabPane;
               }
               tabContent += `</div>`;
