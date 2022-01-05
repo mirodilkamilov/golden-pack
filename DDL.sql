@@ -1,3 +1,5 @@
+USE `golden-pack`;
+
 CREATE TABLE advantages
 (
     id          BIGINT UNSIGNED AUTO_INCREMENT
